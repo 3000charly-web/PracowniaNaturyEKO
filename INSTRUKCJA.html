@@ -47,7 +47,7 @@
     <h2>Jak otworzyć instrukcję</h2>
     <p>Kliknij dwukrotnie plik <strong>INSTRUKCJA.html</strong>. Otworzy się w zwykłej przeglądarce i poprawnie wyświetli polskie znaki.</p>
 
-    <footer>Pracownia Natury EKO — wersja 1.7</footer>
+    <footer>Pracownia Natury EKO — wersja 1.9</footer>
   
 <section>
 <h2>Jak zmienić dane kontaktowe</h2>
@@ -63,6 +63,24 @@ email: "kontakt@twojadomena.pl",
 facebook: "https://www.facebook.com/twojprofil",
 olx: "https://www.olx.pl/oferty/uzytkownik/twojprofil"</code></pre>
 <div class="note"><strong>Ważne:</strong> edytuj wyłącznie tekst pomiędzy cudzysłowami.</div>
+</section>
+
+<section>
+<h2>Jak dodać zdjęcie i opis do „Prawdziwa osoba. Prawdziwa praca.”</h2>
+<ol>
+  <li>Wgraj nowe zdjęcie do głównego folderu strony, obok pliku <strong>index.html</strong>.</li>
+  <li>Otwórz plik <strong>pracownia.js</strong>.</li>
+  <li>Skopiuj jeden istniejący blok zaczynający się od <code>{</code> i kończący na <code>}</code>.</li>
+  <li>W polu <strong>zdjecie</strong> wpisz dokładną nazwę pliku zdjęcia.</li>
+  <li>Uzupełnij pola <strong>tytul</strong> i <strong>opis</strong>.</li>
+  <li>Pomiędzy kolejnymi blokami pozostaw przecinek. Zapisz plik jako UTF-8.</li>
+</ol>
+<pre><code>{
+  zdjecie: "moje-zdjecie.jpg",
+  tytul: "Tytuł zdjęcia",
+  opis: "Tutaj wpisz opis."
+}</code></pre>
+<div class="note"><strong>Ważne:</strong> nazwa wpisana w polu <code>zdjecie</code> musi być identyczna z nazwą pliku, łącznie z końcówką .jpg, .png lub .webp.</div>
 </section>
 </main>
 

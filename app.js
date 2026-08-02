@@ -89,3 +89,21 @@
   configureLink('[data-contact-facebook]', contact.facebook);
   configureLink('[data-contact-olx]', contact.olx);
 })();
+
+// Rozwijany dział „Prawdziwa osoba. Prawdziwa praca.”
+(()=>{
+  const grid=document.querySelector('[data-workshop-grid]');
+  if(!grid) return;
+  const entries=Array.isArray(window.PRACOWNIA) ? window.PRACOWNIA : [];
+  const esc=value=>String(value ?? '').replace(/[&<>"']/g,char=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  })[char]);
+  grid.innerHTML=entries.map(item=>`
+    <article class="workshop-entry">
+      <img src="${esc(item.zdjecie)}" alt="${esc(item.tytul || 'Zdjęcie z Pracowni')}" loading="lazy">
+      <div>
+        <h3>${esc(item.tytul || '')}</h3>
+        <p>${esc(item.opis || '')}</p>
+      </div>
+    </article>`).join('');
+})();

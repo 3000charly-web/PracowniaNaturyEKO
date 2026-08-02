@@ -5,3 +5,5 @@ Dane kontaktowe: kontakt.js
 Instrukcja: INSTRUKCJA.html
 
 Wszystkie pliki zapisano w UTF-8.
+
+Aktualizacja: dodano produkt „Ocet jabłkowy” w kategorii Fermenty i zakwasy.

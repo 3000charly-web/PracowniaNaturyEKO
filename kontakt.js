@@ -2,11 +2,11 @@
 // Zmieniaj wyłącznie tekst po prawej stronie dwukropka, pomiędzy cudzysłowami.
 window.CONTACT = {
   nazwa: "Pracownia Natury EKO",
-  osoba: "Agnieszka",
+  osoba: "Wpisz imię i nazwisko",
   telefon: "+48 000 000 000",
-  email: "aga_bialk@int.pl",
-  miejscowosc: "Lasocin",
-  godziny: "",
+  email: "kontakt@example.pl",
+  miejscowosc: "Wpisz miejscowość",
+  godziny: "Pon.–Pt. 9:00–18:00",
   facebook: "",
   olx: ""
 };

@@ -6,7 +6,7 @@ window.PRODUCTS = {
     "sposob": "Sposób podania i przechowywania uzupełnij zgodnie z recepturą danej partii.",
     "zastosowanie": "Produkt spożywczy do codziennego urozmaicenia diety.",
     "dodatkowe": "Dostępność najlepiej potwierdzić bezpośrednio.",
-    "cena": "25 zł - 1 Litr",
+    "cena": "Uzupełnij cenę",
     "dostepnosc": "Dostępność do potwierdzenia"
   },
   "natto": {
@@ -26,7 +26,7 @@ window.PRODUCTS = {
     "sposob": "Sposób przygotowania naparu uzupełnij zgodnie z recepturą mieszanki.",
     "zastosowanie": "Mieszanka ziołowa przeznaczona do przygotowania naparu.",
     "dodatkowe": "Przechowywać w suchym miejscu.",
-    "cena": "20 zł - 80 g",
+    "cena": "Uzupełnij cenę",
     "dostepnosc": "Dostępność do potwierdzenia"
   },
   "enzymy-bolotowa": {
@@ -36,7 +36,7 @@ window.PRODUCTS = {
     "sposob": "Sposób stosowania uzupełnij zgodnie z informacją przekazywaną klientom.",
     "zastosowanie": "Fermentowany wyrób przygotowywany tradycyjną metodą.",
     "dodatkowe": "Dostępność zależy od czasu fermentacji i aktualnej partii.",
-    "cena": "45 zł - 1 Litr",
+    "cena": "Uzupełnij cenę",
     "dostepnosc": "Na zamówienie / po potwierdzeniu partii"
   },
   "nalewka-zielony-orzech": {
@@ -46,7 +46,7 @@ window.PRODUCTS = {
     "sposob": "Informację o sposobie użycia uzupełnij zgodnie z etykietą produktu.",
     "zastosowanie": "Sezonowy wyrób zielarski.",
     "dodatkowe": "Produkt dostępny w ograniczonych partiach.",
-    "cena": "50 zł - 330 ml",
+    "cena": "200 ml – 50 zł",
     "dostepnosc": "Produkt sezonowy"
   },
   "ziola-szwedzkie": {
@@ -56,7 +56,7 @@ window.PRODUCTS = {
     "sposob": "Sposób użycia uzupełnij zgodnie z informacją na etykiecie.",
     "zastosowanie": "Tradycyjna kompozycja zielarska.",
     "dodatkowe": "Nie przypisuj produktowi działania leczniczego w opisie sprzedażowym.",
-    "cena": "70 zł - 200 ml",
+    "cena": "Uzupełnij cenę",
     "dostepnosc": "Dostępność do potwierdzenia"
   },
   "mazidelko-wrotyczowe": {
@@ -66,7 +66,7 @@ window.PRODUCTS = {
     "sposob": "Nanieść niewielką ilość na nieuszkodzoną skórę i delikatnie wmasować. Tylko do użytku zewnętrznego.",
     "zastosowanie": "Do codziennej pielęgnacji skóry.",
     "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową.",
-    "cena": "30 zł - 100 ml",
+    "cena": "100 ml – 30 zł",
     "dostepnosc": "Dostępny w ograniczonych partiach"
   },
   "dezodorant-rozany": {
@@ -76,7 +76,7 @@ window.PRODUCTS = {
     "sposob": "Nanieść niewielką ilość na czystą i suchą skórę.",
     "zastosowanie": "Do codziennej pielęgnacji i zapewnienia uczucia świeżości.",
     "dodatkowe": "Nie stosować na podrażnioną skórę.",
-    "cena": "35 zł - 50 ml",
+    "cena": "50 ml – 35 zł",
     "dostepnosc": "Dostępność do potwierdzenia"
   },
   "pasta-bez-fluoru": {
@@ -86,7 +86,7 @@ window.PRODUCTS = {
     "sposob": "Niewielką ilość nanieść na szczoteczkę i używać jak zwykłej pasty.",
     "zastosowanie": "Do codziennej higieny jamy ustnej.",
     "dodatkowe": "Nie połykać. Przechowywać szczelnie zamknięte.",
-    "cena": "35 zł - 65 ml",
+    "cena": "65 ml – 35 zł",
     "dostepnosc": "Dostępność do potwierdzenia"
   },
   "oklady-zywokost": {
@@ -106,7 +106,18 @@ window.PRODUCTS = {
     "sposob": "Sposób przygotowania zależy od rodzaju mieszanki.",
     "zastosowanie": "Do przygotowania naparów lub zgodnie z opisem konkretnej kompozycji.",
     "dodatkowe": "Przechowywać w suchym i zacienionym miejscu.",
-    "cena": "100 zł",
+    "cena": "Cena zależna od mieszanki",
     "dostepnosc": "Dostępność do potwierdzenia"
-  }
+  },
+  "ocet-jablkowy": {
+    "nazwa": "Ocet jabłkowy",
+    "opis": "Naturalny ocet jabłkowy przygotowywany metodą tradycyjnej fermentacji. Niepasteryzowany, niefiltrowany i tworzony w małych partiach.",
+    "sklad": "Jabłka, woda.",
+    "sposob": "1–2 łyżki rozcieńczyć w szklance wody lub stosować jako dodatek do sałatek, surówek i innych potraw.",
+    "zastosowanie": "Produkt spożywczy do urozmaicenia codziennej diety oraz jako dodatek kulinarny.",
+    "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć.",
+    "cena": "1 litr – 50 zł",
+    "dostepnosc": "Dostępny"
+  },
+
 };

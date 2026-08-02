@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instrukcja edycji opisów — Pracownia Natury EKO</title>
+  <style>
+    :root { --green:#285b35; --light:#f7f3e8; --border:#d8cfb9; --text:#2e2a24; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:var(--light); color:var(--text); line-height:1.6; }
+    main { max-width:900px; margin:40px auto; padding:32px; background:#fff; border:1px solid var(--border); border-radius:18px; box-shadow:0 10px 30px rgba(45,70,45,.08); }
+    h1,h2 { color:var(--green); }
+    h1 { margin-top:0; }
+    code, pre { font-family: Consolas, "Courier New", monospace; }
+    pre { background:#f4f6f1; border:1px solid #dce4d7; border-radius:12px; padding:18px; overflow:auto; }
+    .note { background:#eef6ee; border-left:5px solid var(--green); padding:14px 16px; border-radius:8px; }
+    ol li { margin-bottom:10px; }
+    footer { margin-top:30px; font-size:.92rem; color:#666; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Pracownia Natury EKO — instrukcja edycji opisów</h1>
+    <p>Wszystkie opisy produktów znajdują się w jednym pliku: <strong>produkty.js</strong>.</p>
+
+    <h2>Jak zmienić opis produktu</h2>
+    <ol>
+      <li>Otwórz plik <strong>produkty.js</strong> w Notatniku, Notepad++ albo Visual Studio Code.</li>
+      <li>Znajdź nazwę produktu, np. <strong>herbata-przeziebienie-kaszel</strong>.</li>
+      <li>Zmień tekst po prawej stronie pól: <strong>opis</strong>, <strong>sklad</strong>, <strong>sposob</strong>, <strong>zastosowanie</strong> lub <strong>dodatkowe</strong>.</li>
+      <li>Nie usuwaj cudzysłowów, przecinków ani nawiasów.</li>
+      <li>Zapisz plik w kodowaniu <strong>UTF-8</strong>.</li>
+      <li>Wgraj zmieniony plik <strong>produkty.js</strong> na GitHub pod tą samą nazwą.</li>
+    </ol>
+
+    <h2>Przykład</h2>
+    <pre><code>"opis": "Tutaj wpisz swój nowy opis.",
+"sklad": "Tutaj wpisz skład produktu.",
+"sposob": "Tutaj wpisz sposób użycia.",
+"zastosowanie": "Tutaj wpisz zastosowanie.",
+"dodatkowe": "Tutaj wpisz dodatkowe informacje."</code></pre>
+
+    <div class="note">
+      <strong>Ważne:</strong> nie zmieniaj nazw pól po lewej stronie. Zmieniaj wyłącznie tekst znajdujący się pomiędzy cudzysłowami.
+    </div>
+
+    <h2>Jak otworzyć instrukcję</h2>
+    <p>Kliknij dwukrotnie plik <strong>INSTRUKCJA.html</strong>. Otworzy się w zwykłej przeglądarce i poprawnie wyświetli polskie znaki.</p>
+
+    <footer>Pracownia Natury EKO — wersja 1.7</footer>
+  
+<section>
+<h2>Jak zmienić dane kontaktowe</h2>
+<ol>
+  <li>Otwórz plik <strong>kontakt.js</strong>.</li>
+  <li>Zmień tekst po prawej stronie pól: <strong>osoba</strong>, <strong>telefon</strong>, <strong>email</strong>, <strong>miejscowosc</strong> i <strong>godziny</strong>.</li>
+  <li>W polach <strong>facebook</strong> i <strong>olx</strong> wklej pełne adresy stron. Jeżeli zostawisz puste cudzysłowy, przycisk nie pojawi się na stronie.</li>
+  <li>Nie usuwaj cudzysłowów, przecinków ani nawiasów.</li>
+  <li>Zapisz plik jako UTF-8 i wgraj na GitHub pod tą samą nazwą.</li>
+</ol>
+<pre><code>telefon: "+48 600 000 000",
+email: "kontakt@twojadomena.pl",
+facebook: "https://www.facebook.com/twojprofil",
+olx: "https://www.olx.pl/oferty/uzytkownik/twojprofil"</code></pre>
+<div class="note"><strong>Ważne:</strong> edytuj wyłącznie tekst pomiędzy cudzysłowami.</div>
+</section>
+</main>
+
+<section>
+<h3>Zmiana ceny</h3>
+<p>W pliku <code>produkty.js</code> znajdź wybrany produkt i zmień wartości przy polach <code>cena</code> oraz <code>dostepnosc</code>.</p>
+<pre><code>"cena": "100 ml – 35 zł",
+"dostepnosc": "Dostępny"</code></pre>
+<p>Zapisz plik w kodowaniu UTF-8, a następnie wgraj zmieniony <code>produkty.js</code> na GitHub.</p>
+</section>
+</body>
+</html>

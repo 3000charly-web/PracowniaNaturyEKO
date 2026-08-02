@@ -1,2 +1,7 @@
-Pracownia Natury EKO v1.2
-Wgraj wszystkie pliki z tego folderu do głównego katalogu repozytorium GitHub.
+Pracownia Natury EKO — wersja 1.7
+
+Opisy i ceny produktów: produkty.js
+Dane kontaktowe: kontakt.js
+Instrukcja: INSTRUKCJA.html
+
+Wszystkie pliki zapisano w UTF-8.

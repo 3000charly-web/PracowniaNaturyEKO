@@ -39,3 +39,19 @@
 .workshop-entry p{margin:0;color:var(--muted)}
 @media(max-width:900px){.workshop-grid{grid-template-columns:1fr}.workshop-entry{grid-template-columns:1fr 1.2fr}}
 @media(max-width:600px){.workshop-details>summary{padding:1.1rem}.workshop-content{padding:1rem}.workshop-entry{grid-template-columns:1fr}.workshop-entry img{height:240px}.workshop-entry div{padding:1rem}}
+
+/* Wersja 2.0 — zdjęcie przy rozwijanej sekcji „Prawdziwa osoba. Prawdziwa praca.” */
+.workshop-details>summary{padding:0;min-height:230px;position:relative;background:#183e2a;color:#fff;overflow:hidden}
+.workshop-details>summary .workshop-cover{width:46%;align-self:stretch;object-fit:cover;object-position:center 42%;flex:0 0 46%}
+.workshop-details>summary span{padding:1.65rem 4rem 1.65rem 1.7rem;position:relative;z-index:1}
+.workshop-details>summary strong{color:#fff}
+.workshop-details>summary small{color:rgba(255,255,255,.82)}
+.workshop-details>summary::after{position:absolute;right:1.6rem;top:50%;transform:translateY(-50%);color:#fff;z-index:2}
+.workshop-details[open]>summary::after{transform:translateY(-50%) rotate(180deg)}
+@media(max-width:700px){
+  .workshop-details>summary{display:grid;grid-template-columns:1fr;min-height:0}
+  .workshop-details>summary .workshop-cover{width:100%;height:250px;object-position:center 38%;flex:none}
+  .workshop-details>summary span{padding:1.25rem 3rem 1.35rem 1.2rem}
+  .workshop-details>summary::after{right:1.2rem;top:auto;bottom:1.5rem;transform:none}
+  .workshop-details[open]>summary::after{transform:rotate(180deg)}
+}

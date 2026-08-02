@@ -12,5 +12,10 @@ window.PRACOWNIA = [
     zdjecie: "maceracja-wrotycz-start.jpg",
     tytul: "Praca zgodna z rytmem natury",
     opis: "Nie produkujemy masowo. Sezonowość, dostępność składników i naturalny rytm przygotowania są częścią charakteru każdego wyrobu."
+  },
+  {
+    zdjecie: "agusia1.png",
+    tytul: "Codzienność w Pracowni",
+    opis: "Każdy etap przygotowania wyrobów wykonywany jest ręcznie — od wyboru składników, przez przygotowanie receptury, aż po gotowy produkt."
   }
 ];

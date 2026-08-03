@@ -17,5 +17,26 @@ window.PRACOWNIA = [
     zdjecie: "agusia1.png",
     tytul: "Codzienność w Pracowni",
     opis: "Każdy etap przygotowania wyrobów wykonywany jest ręcznie — od wyboru składników, przez przygotowanie receptury, aż po gotowy produkt."
+  },
+  {
+    zdjecie: "prawdziwa-praca-sortowanie.png",
+    tytul: "Ręczne sortowanie ziół",
+    opis: "Każda partia ziół jest ręcznie przeglądana i przygotowywana do dalszej pracy."
+  },
+  {
+    zdjecie: "prawdziwa-praca-lawenda.png",
+    tytul: "Zbiór ziół",
+    opis: "Zioła zbierane są w odpowiednim momencie, z poszanowaniem naturalnego rytmu przyrody."
+  },
+  {
+    zdjecie: "prawdziwa-praca-gotowanie.png",
+    tytul: "Przygotowanie naparów",
+    opis: "Powolne przygotowywanie naparów i wyciągów według własnych receptur."
+  },
+  {
+    zdjecie: "prawdziwa-praca-rumianek.png",
+    tytul: "Praca w terenie",
+    opis: "Każdy etap powstawania produktów zaczyna się od kontaktu z naturą."
   }
+
 ];

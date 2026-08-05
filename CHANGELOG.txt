@@ -1,0 +1,13 @@
+Pracownia Natury EKO
+Wersja: v2.0.2
+Data: 2026-08-05
+
+Zmiany:
+- poprawiono baner kategorii Herbatki i mieszanki ziołowe — użyto właściwej grafiki grupowej,
+- poprawiono baner kategorii Nalewki i ekstrakty — użyto właściwej grafiki grupowej,
+- poprawiono baner kategorii Naturalna pielęgnacja — użyto właściwej grafiki grupowej.
+
+Nie wprowadzono innych zmian w produktach, opisach ani funkcjach strony.
+
+v2.0.3
+- poprawiono zdjęcie produktu Herbatka na przeziębienie i kaszel w sekcji Aktualna oferta

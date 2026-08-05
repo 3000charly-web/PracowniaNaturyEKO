@@ -120,4 +120,15 @@ window.PRODUCTS = {
     "dostepnosc": "Dostępny"
   },
 
+  "mazidelko-wrotycz-glistnik": {
+    "nazwa": "Mazidełko z wrotyczu i glistnika",
+    "opis": "Naturalne mazidełko przygotowywane ręcznie na bazie wrotyczu i glistnika, inspirowane tradycyjnym zielarstwem. Tworzone w małych partiach z dbałością o jakość składników oraz tradycyjne metody przygotowania ziołowych wyciągów.",
+    "sklad": "Wyciąg z wrotyczu, wyciąg z glistnika (jaskółcze ziele) oraz naturalna baza tłuszczowa.",
+    "sposob": "Niewielką ilość mazidełka nanieść na wybrane miejsce i delikatnie wmasować. Wyłącznie do użytku zewnętrznego.",
+    "zastosowanie": "Tradycyjnie stosowane do pielęgnacji zrogowaciałego i szorstkiego naskórka, skóry po ukąszeniach owadów, przy swędzeniu i podrażnieniach oraz skóry skłonnej do drobnych niedoskonałości.",
+    "dodatkowe": "Produkt ręcznie wykonywany, gęsty i wydajny. Nie stosować na otwarte rany ani błony śluzowe. Przed pierwszym użyciem wykonać próbę na małym fragmencie skóry. Przechowywać w chłodnym i zacienionym miejscu.",
+    "cena": "",
+    "dostepnosc": "Dostępność do potwierdzenia"
+  },
+
 };

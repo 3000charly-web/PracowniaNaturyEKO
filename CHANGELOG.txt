@@ -9,5 +9,6 @@ Zmiany:
 
 Nie wprowadzono innych zmian w produktach, opisach ani funkcjach strony.
 
+
 v2.0.3
-- poprawiono zdjęcie produktu Herbatka na przeziębienie i kaszel w sekcji Aktualna oferta
+- poprawiono zdjęcie produktu Herbatka na przeziębienie i kaszel w sekcji Aktualna oferta.

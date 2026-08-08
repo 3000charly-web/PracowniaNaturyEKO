@@ -1,3 +1,42 @@
+v2.0.12
+- rozbudowano koszyk o trzyetapowy proces zamówienia: koszyk, dane klienta i podsumowanie
+- dodano formularz danych zamawiającego i dynamiczne pola dostawy (Paczkomat / kurier / odbiór osobisty)
+- dodano podsumowanie kosztów i sposobu płatności wynikającego z wybranej dostawy
+- przygotowano wysyłkę kompletnego zamówienia e-mailem (bez bramki płatności online)
+- przywrócono szerokie zdjęcie Mazidełka z wrotyczu i glistnika
+- stopka: Designed by Karol Kotyla
+
+Wersja 2.0.9
+- wszystkie produkty ustawione jako dostępne, z wyjątkiem Natto
+- poszerzone bez rozciągania zdjęcia: Mazidełko z wrotyczu i glistnika, Mazidełko żywokostowe z DMSO, Ocet jabłkowy
+- Atlas roślin i składników: dodano Suszone ziele topinamburu i Suszoną czarną malwę
+
+v2.0.8
+- Ujednolicono dolny wiersz kart produktów: dostępność, ilość i przycisk zakupu w jednej linii.
+- Mazidełko z wrotyczu i glistnika: 100 ml, 30 zł, dostępne.
+- Naturalny dezodorant różany, Pasta do zębów bez fluoru i Herbata na przeziębienie i kaszel: oznaczone jako dostępne.
+- Zakwas Enzymy Bołotowa: 45 zł / 1 litr.
+- Zakwas buraczany: 25 zł / 1 litr.
+- Ocet jabłkowy: podmieniono zdjęcie na zaakceptowaną kompozycję.
+- Dodano jednolity znak wodny Pracownia Natury na zdjęciach produktowych.
+
+Wersja 2.0.7
+- Dodano wybór ilości sztuk przy każdym produkcie przed dodaniem do koszyka.
+- Dodano czytelny status Dostępny / Niedostępny przy każdym produkcie; niedostępnych nie można dodać do koszyka.
+- Uzupełniono Mazidełko żywokostowe z DMSO: zdjęcie, cena 39 zł / 100 ml, zaakceptowany opis, skład, sposób użycia i ostrzeżenia.
+- Podmieniono zdjęcie Mazidełka z wrotyczu i glistnika na zaakceptowaną wersję z uzupełnionymi bokami.
+
+Pracownia Natury EKO
+
+v2.0.6
+- rozpoczęto przebudowę strony z katalogu na sklep
+- usunięto przyciski „Zamów bezpośrednio” i odnośniki do OLX
+- dodano przycisk „Dodaj do koszyka” przy produktach z uzupełnioną ceną
+- dodano działający koszyk z ilościami, podsumowaniem i wyborem dostawy
+- dodano demonstracyjne przejście do zamówienia przez wiadomość e-mail
+- dodano produkt „Mazidełko żywokostowe z DMSO” w Naturalnej pielęgnacji (opis, zdjęcie i cena do uzupełnienia)
+- płatności online nie są jeszcze podłączone
+
 v2.0.5
 - usunięto ze strony głównej całą sekcję „Aktualna oferta”
 - poprawiono skalowanie zdjęć w sekcji „Z życia Pracowni”, aby fotografie nie były obcinane
@@ -24,3 +63,14 @@ Nie wprowadzono innych zmian w produktach, opisach ani funkcjach strony.
 
 v2.0.3
 - poprawiono zdjęcie produktu Herbatka na przeziębienie i kaszel w sekcji Aktualna oferta.
+
+v2.0.10
+- poprawiono globalnie szerokość i responsywność kart produktów, aby zdjęcia i przyciski nie były obcinane z prawej strony
+- zachowano status, ilość i przycisk „Dodaj do koszyka” w jednym wierszu
+- w Atlasie roślin i składników zastąpiono zdjęcia w słoikach naturalnymi ujęciami suszonego ziela topinamburu i suszonej czarnej malwy
+
+
+v2.0.11
+- Zioła szwedzkie: nowe zdjęcie i opis.
+- Topinambur i czarna malwa pozostają wyłącznie w Atlasie.
+- Dodano dwa zdjęcia do sekcji Z życia Pracowni.

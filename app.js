@@ -3,14 +3,6 @@
   const m=document.querySelector('.menu');
   if(b && m) b.onclick=()=>m.classList.toggle('open');
 
-  document.querySelectorAll('.placeholder-olx').forEach(x=>x.addEventListener('click',e=>{
-    const href=x.getAttribute('href');
-    if(!href || href==='#'){
-      e.preventDefault();
-      alert('Tutaj podłączymy właściwy link do OLX.');
-    }
-  }));
-
   function esc(value){
     return String(value ?? '').replace(/[&<>\"']/g, c=>({
       '&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#039;'
@@ -43,7 +35,7 @@
         <summary>💰 Cena</summary>
         <div class="product-description price-description">
           <p class="price-value">${esc(item.cena || 'Uzupełnij cenę')}</p>
-          ${item.dostepnosc ? `<p class="availability">${esc(item.dostepnosc)}</p>` : ''}
+          ${item.dostepnosc ? `<p class="availability ${/dostępny/i.test(item.dostepnosc) && !/niedostęp|potwierd|zamówienie|sezon/i.test(item.dostepnosc) ? 'is-available' : 'is-unavailable'}"><span class="availability-dot"></span>${esc(item.dostepnosc)}</p>` : ''}
         </div>`;
       const descriptionDetails=card.querySelector('.product-details');
       descriptionDetails.insertAdjacentElement('afterend', priceDetails);
@@ -97,7 +89,6 @@
     }
   };
   configureLink('[data-contact-facebook]', contact.facebook);
-  configureLink('[data-contact-olx]', contact.olx);
 })();
 
 // Rozwijany dział „Prawdziwa osoba. Prawdziwa praca.”

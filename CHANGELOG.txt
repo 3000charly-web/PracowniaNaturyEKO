@@ -1,3 +1,15 @@
+v2.0.5
+- usunięto ze strony głównej całą sekcję „Aktualna oferta”
+- poprawiono skalowanie zdjęć w sekcji „Z życia Pracowni”, aby fotografie nie były obcinane
+- podmieniono zdjęcie słoiczków w galerii na zaakceptowaną poprawioną wersję
+- poprawiono ostrość i klarowność zdjęć „Ręcznie pakowane herbatki” oraz „Gotowe wyroby”
+
+v2.0.4
+- zastąpiono blok „Zapytaj o wyrób” informacją „Wysyłka i odbiór”
+- dodano stawki InPost, innego kuriera, odbioru osobistego i informację o wysyłce zagranicznej
+- ceny wysyłki przeniesiono do łatwego w edycji pliku wysylka.js
+- poprawiono skalowanie zdjęć: Mazidełko z wrotyczu i glistnika, Zakwas buraczany, Natto
+
 Pracownia Natury EKO
 Wersja: v2.0.2
 Data: 2026-08-05

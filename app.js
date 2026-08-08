@@ -50,6 +50,16 @@
     }
   });
 
+
+  // Wysyłka i odbiór — ceny z pliku wysylka.js
+  const shippingList=document.querySelector('[data-shipping-list]');
+  if(shippingList){
+    const shipping=Array.isArray(window.SHIPPING) ? window.SHIPPING : [];
+    shippingList.innerHTML=shipping.map(item=>`
+      <div class="shipping-row"><span>${esc(item.nazwa)}</span><strong>${esc(item.cena)}</strong></div>`
+    ).join('');
+  }
+
   // Dane kontaktowe z pliku kontakt.js
   const contact=window.CONTACT || {};
   const setText=(selector,value)=>{

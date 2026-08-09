@@ -7,5 +7,5 @@ window.CONTACT = {
   email: "aga_bialk@int.pl",
   miejscowosc: "Lasocin",
   godziny: "Pon.–Pt. 9:00–18:00",
-  facebook: ""
+  facebook: "https://www.facebook.com/profile.php?id=61592771173142&locale=pl_PL"
 };

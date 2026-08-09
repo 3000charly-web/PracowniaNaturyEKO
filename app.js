@@ -108,3 +108,19 @@
       </div>
     </article>`).join('');
 })();
+
+
+// Formularz kontaktowy otwierany przyciskiem „Napisz wiadomość”.
+(()=>{
+  const trigger=document.querySelector('[data-contact-form-button]');
+  if(!trigger) return;
+  const modal=document.createElement('div');
+  modal.className='contact-modal'; modal.setAttribute('aria-hidden','true');
+  modal.innerHTML=`<div class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-form-title"><button class="contact-modal-close" type="button" aria-label="Zamknij">×</button><div class="eyebrow">Kontakt</div><h2 id="contact-form-title">Napisz wiadomość</h2><form data-contact-form><label>Imię<input name="name" required autocomplete="name"></label><label>E-mail<input name="email" type="email" required autocomplete="email"></label><label>Temat<input name="subject" required></label><label>Wiadomość<textarea name="message" rows="6" required></textarea></label><button class="btn primary" type="submit">Wyślij</button></form></div>`;
+  document.body.append(modal);
+  const close=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')};
+  trigger.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');modal.querySelector('input').focus()});
+  modal.querySelector('.contact-modal-close').addEventListener('click',close);
+  modal.addEventListener('click',e=>{if(e.target===modal)close()});
+  modal.querySelector('form').addEventListener('submit',e=>{e.preventDefault(); const form=e.currentTarget;if(!form.checkValidity()){form.reportValidity();return;} const d=Object.fromEntries(new FormData(form));const to=(window.CONTACT&&window.CONTACT.email)||'';const body=`Imię: ${d.name}\nE-mail: ${d.email}\n\n${d.message}`;window.location.href=`mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(body)}`;});
+})();

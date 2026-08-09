@@ -116,6 +116,7 @@
             <label class="full">E-mail<input name="email" type="email" autocomplete="email" required></label>
           </div>
           <div class="delivery-fields" data-delivery-fields></div>
+          <fieldset class="payment-choice"><legend>Sposób płatności</legend><label><input type="radio" name="payment" value="Przelew na konto" required> Przelew na konto</label><label><input type="radio" name="payment" value="Pobranie" required> Pobranie</label><label><input type="radio" name="payment" value="BLIK na telefon" required> BLIK na telefon</label></fieldset>
           <label class="full">Uwagi do zamówienia<textarea name="notes" rows="3" placeholder="Opcjonalnie"></textarea></label>
           <div class="payment-info" data-payment-info></div>
           <p class="checkout-note">To jest formularz przygotowania zamówienia. Po zatwierdzeniu otworzy się wiadomość e-mail z kompletem danych do wysłania do Pracowni.</p>
@@ -125,7 +126,7 @@
       <section class="checkout-panel" data-checkout-panel="summary">
         <div class="order-preview" data-order-preview></div>
         <div class="checkout-nav"><button type="button" class="btn ghost" data-back-details>← Popraw dane</button><button type="button" class="btn primary" data-send-order>Wyślij zamówienie e-mailem</button></div>
-        <p class="checkout-note">Płatności online nie są jeszcze podłączone. Wybrany sposób zapłaty wynika z metody dostawy i zostanie potwierdzony przez Pracownię.</p>
+        <p class="checkout-note">Po wysłaniu zamówienia Pracownia potwierdzi zamówienie i przekaże dane potrzebne do wybranej płatności, jeśli są wymagane.</p>
       </section>
     </aside>`;
   document.body.append(overlay);
@@ -143,12 +144,7 @@
   function closeCart(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');}
   function shippingItem(){return shipping[Number(shippingSelect.value)||0]||null;}
   function shippingCost(){const item=shippingItem(); if(!item||/bezpłat/i.test(item.cena))return 0; return parsePrice(item.cena)||0;}
-  function paymentLabel(){
-    const name=shippingItem()?.nazwa||'';
-    if(/pobranie/i.test(name)) return 'Płatność przy odbiorze (pobranie)';
-    if(/odbiór osobisty/i.test(name)) return 'Płatność przy odbiorze osobistym lub po indywidualnym uzgodnieniu';
-    return 'Przedpłata — dane do płatności po potwierdzeniu zamówienia';
-  }
+  function paymentLabel(){return formDataObject().payment||'Nie wybrano';}
   function showStep(step){
     overlay.querySelectorAll('[data-checkout-panel]').forEach(p=>p.classList.toggle('active',p.dataset.checkoutPanel===step));
     overlay.querySelectorAll('[data-step-dot]').forEach(d=>d.classList.toggle('active',d.dataset.stepDot===step));
@@ -188,7 +184,7 @@
       html+='<div class="checkout-grid"><label class="full">Ulica i numer<input name="street" autocomplete="street-address" required></label><label>Kod pocztowy<input name="postal" autocomplete="postal-code" required placeholder="00-000"></label><label>Miejscowość<input name="city" autocomplete="address-level2" required></label></div>';
     }
     box.innerHTML=html;
-    overlay.querySelector('[data-payment-info]').innerHTML=`<strong>Sposób płatności:</strong> ${esc(paymentLabel())}`;
+    overlay.querySelector('[data-payment-info]').innerHTML='<strong>Płatność</strong>Wybierz: przelew na konto, pobranie albo BLIK na telefon.';
   }
 
   overlay.querySelector('[data-go-details]').addEventListener('click',()=>{if(!getCart().length)return;renderDeliveryFields();showStep('details');});
@@ -198,10 +194,13 @@
   function formDataObject(){return Object.fromEntries(new FormData(form).entries());}
   function orderData(){
     const cart=getCart(), ship=shippingItem(), subtotal=cart.reduce((sum,x)=>sum+x.price*x.qty,0), delivery=shippingCost();
-    return {cart,ship,subtotal,delivery,total:subtotal+delivery,customer:formDataObject(),payment:paymentLabel()};
+    return {cart,ship,subtotal,delivery,total:subtotal+delivery,customer:formDataObject(),payment:formDataObject().payment||'Nie wybrano'};
   }
   function validateForm(){
     if(!form.checkValidity()){form.reportValidity();return false;}
+    const delivery=shippingItem()?.nazwa||''; const pay=formDataObject().payment||'';
+    if(/pobranie/i.test(delivery) && pay!=='Pobranie'){alert('Dla dostawy za pobraniem wybierz płatność „Pobranie”.');return false;}
+    if(/przedpłata/i.test(delivery) && pay==='Pobranie'){alert('Dla tej dostawy wybierz „Przelew na konto” albo „BLIK na telefon”.');return false;}
     return true;
   }
   form.addEventListener('submit',e=>{

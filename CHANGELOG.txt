@@ -1,3 +1,20 @@
+v2.3.2
+- „Pasta do zębów bez fluoru”: zastąpiono błędne zdjęcie z v2.3.1 zaakceptowaną kompozycją z jednym słoiczkiem, przygotowaną do proporcji karty.
+- Zdjęcia produktów są teraz dopasowywane do stałej ramki przez CSS (object-fit: cover), bez przerabiania pozostałych plików zdjęć.
+
+v2.3.1
+- „Pasta do zębów bez fluoru”: podmieniono zdjęcie na zaakceptowaną kompozycję z jednym słoiczkiem, dopasowano/wyskalowano do karty bez znaku wodnego w pliku; znak wodny nakłada strona.
+
+v2.3
+- „Syrop z owoców czarnego bzu” ustawiono jako niedostępny.
+- „Naturalny dezodorant różany”: podmieniono zdjęcie na zaakceptowane, dopasowano/wyskalowano do karty bez znaku wodnego w pliku; znak wodny nakłada strona.
+
+v2.2.2
+- Testowe wdrożenie systemowego znaku wodnego wyłącznie dla produktu „Herbata na przeziębienie i kaszel”.
+- Jeden znak: „Pracownia / Natury”, 2 wiersze, centralnie, lekko wyżej, bardzo delikatny.
+- Zdjęcie herbaty zachowuje produkt i kadr; usunięto stary znak z górnego fragmentu i uzupełniono boki z tego samego zdjęcia.
+- Pozostałych zdjęć i kart nie zmieniano.
+
 v2.0.12
 - rozbudowano koszyk o trzyetapowy proces zamówienia: koszyk, dane klienta i podsumowanie
 - dodano formularz danych zamawiającego i dynamiczne pola dostawy (Paczkomat / kurier / odbiór osobisty)

@@ -27,18 +27,20 @@
     openCart();
   }
 
-  // Jednolity znak wodny na wszystkich zdjęciach produktowych.
+  // Systemowy znak wodny wdrażamy stopniowo: tylko dla kart oznaczonych data-watermark="system".
   document.querySelectorAll('.card > img').forEach(img=>{
     if(img.parentElement.classList.contains('product-image-wrap')) return;
     const wrap=document.createElement('div');
     wrap.className='product-image-wrap';
     img.parentNode.insertBefore(wrap,img);
     wrap.append(img);
-    const mark=document.createElement('div');
-    mark.className='product-watermark';
-    mark.setAttribute('aria-hidden','true');
-    mark.innerHTML='<span class="watermark-emblem">❧</span><strong>Pracownia<br>Natury</strong>';
-    wrap.append(mark);
+    if(img.closest('[data-watermark]')?.dataset.watermark === 'system'){
+      const mark=document.createElement('div');
+      mark.className='product-watermark';
+      mark.setAttribute('aria-hidden','true');
+      mark.innerHTML='<strong><span>Pracownia</span><span>Natury</span></strong>';
+      wrap.append(mark);
+    }
   });
 
   // Akcje zakupowe na kartach produktów.

@@ -1,3 +1,7 @@
+v2.3.4
+- Poprawiono wdrożenie poprzednio zatwierdzonych zmian. Tylko trzy pionowe zdjęcia butelek („Syrop z owoców czarnego bzu”, „Ocet z wrotyczu”, „Zioła szwedzkie”) są teraz wyświetlane w całości w ramce bez modyfikowania plików zdjęć.
+- Dodano widoczny przycisk „Wyczyść koszyk”, usuwający wszystkie pozycje po potwierdzeniu.
+
 v2.3.2
 - „Pasta do zębów bez fluoru”: zastąpiono błędne zdjęcie z v2.3.1 zaakceptowaną kompozycją z jednym słoiczkiem, przygotowaną do proporcji karty.
 - Zdjęcia produktów są teraz dopasowywane do stałej ramki przez CSS (object-fit: cover), bez przerabiania pozostałych plików zdjęć.

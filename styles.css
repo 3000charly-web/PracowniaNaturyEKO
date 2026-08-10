@@ -171,3 +171,15 @@
   object-position:center;
   padding:0;
 }
+
+/* v2.3.4: tylko 3 pionowe zdjęcia butelek — cała fotografia widoczna, bez modyfikacji pliku */
+.product-image-wrap>img.product-image-bottle{
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center;
+  padding:0;
+  background:var(--linen);
+}
+
+.cart-clear-button{display:block;margin:.8rem 0 1rem auto;border:1px solid #b86a5a;background:transparent;color:#9b493c;border-radius:999px;padding:.55rem .9rem;font:700 .75rem Arial,sans-serif;cursor:pointer}.cart-clear-button:hover{background:#fff3ef}.cart-clear-button:disabled{opacity:.45;cursor:not-allowed}.cart-clear-button:disabled:hover{background:transparent}

@@ -100,6 +100,7 @@
       <div class="checkout-steps"><span class="active" data-step-dot="cart">1. Koszyk</span><span data-step-dot="details">2. Dane</span><span data-step-dot="summary">3. Podsumowanie</span></div>
       <section class="checkout-panel active" data-checkout-panel="cart">
         <div class="cart-items" data-cart-items></div>
+        <button type="button" class="cart-clear-button" data-clear-cart>Wyczyść koszyk</button>
         <div class="cart-summary">
           <label for="cart-shipping">Sposób dostawy</label>
           <select id="cart-shipping" data-cart-shipping></select>
@@ -169,9 +170,16 @@
     overlay.querySelector('[data-cart-shipping-price]').textContent=money(ship);
     overlay.querySelector('[data-cart-total]').textContent=money(subtotal+ship);
     overlay.querySelector('[data-go-details]').disabled=!cart.length;
+    overlay.querySelector('[data-clear-cart]').disabled=!cart.length;
   }
   function changeQty(index,delta){const cart=getCart();if(!cart[index])return;cart[index].qty=Math.min(99,cart[index].qty+delta);if(cart[index].qty<=0)cart.splice(index,1);saveCart(cart);}
   function removeItem(index){const cart=getCart();cart.splice(index,1);saveCart(cart);}
+  function clearCart(){
+    if(!getCart().length) return;
+    if(!window.confirm('Czy na pewno chcesz wyczyścić cały koszyk?')) return;
+    saveCart([]);
+    showStep('cart');
+  }
 
   const form=overlay.querySelector('[data-checkout-form]');
   function renderDeliveryFields(){
@@ -191,6 +199,7 @@
 
   overlay.querySelector('[data-go-details]').addEventListener('click',()=>{if(!getCart().length)return;renderDeliveryFields();showStep('details');});
   overlay.querySelector('[data-back-cart]').addEventListener('click',()=>showStep('cart'));
+  overlay.querySelector('[data-clear-cart]').addEventListener('click',clearCart);
   overlay.querySelector('[data-back-details]').addEventListener('click',()=>showStep('details'));
 
   function formDataObject(){return Object.fromEntries(new FormData(form).entries());}

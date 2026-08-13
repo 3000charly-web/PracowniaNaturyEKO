@@ -122,14 +122,23 @@
           <fieldset class="payment-choice"><legend>Sposób płatności</legend><label><input type="radio" name="payment" value="Przelew na konto" required> Przelew na konto</label><label><input type="radio" name="payment" value="Pobranie" required> Pobranie</label><label><input type="radio" name="payment" value="BLIK na telefon" required> BLIK na telefon</label></fieldset>
           <label class="full">Uwagi do zamówienia<textarea name="notes" rows="3" placeholder="Opcjonalnie"></textarea></label>
           <div class="payment-info" data-payment-info></div>
-          <p class="checkout-note">To jest formularz przygotowania zamówienia. Po zatwierdzeniu otworzy się wiadomość e-mail z kompletem danych do wysłania do Pracowni.</p>
+          <p class="checkout-note">Uzupełnij dane i przejdź do podsumowania. Zamówienie wyślesz bezpośrednio ze strony — bez otwierania programu pocztowego.</p>
           <div class="checkout-nav"><button type="button" class="btn ghost" data-back-cart>← Koszyk</button><button type="submit" class="btn primary">Podsumowanie →</button></div>
         </form>
       </section>
       <section class="checkout-panel" data-checkout-panel="summary">
-        <div class="order-preview" data-order-preview></div>
-        <div class="checkout-nav"><button type="button" class="btn ghost" data-back-details>← Popraw dane</button><button type="button" class="btn primary" data-send-order>Wyślij zamówienie e-mailem</button></div>
-        <p class="checkout-note">Po wysłaniu zamówienia Pracownia potwierdzi zamówienie i przekaże dane potrzebne do wybranej płatności, jeśli są wymagane.</p>
+        <div data-summary-content>
+          <div class="order-preview" data-order-preview></div>
+          <div class="checkout-nav"><button type="button" class="btn ghost" data-back-details>← Popraw dane</button><button type="button" class="btn primary" data-send-order>Wyślij zamówienie</button></div>
+          <p class="checkout-note">Po wysłaniu zamówienia Pracownia skontaktuje się z Tobą mailowo w sprawie potwierdzenia zamówienia i płatności.</p>
+          <p class="checkout-note order-send-status" data-order-send-status aria-live="polite"></p>
+        </div>
+        <div class="order-success" data-order-success hidden>
+          <h3>Dziękujemy za zamówienie.</h3>
+          <p>Zamówienie zostało przekazane do Pracowni Natury EKO.</p>
+          <p>Skontaktujemy się z Tobą mailowo w sprawie potwierdzenia zamówienia i płatności.</p>
+          <button type="button" class="btn primary" data-close-after-order>Zamknij</button>
+        </div>
       </section>
     </aside>`;
   document.body.append(overlay);
@@ -143,7 +152,7 @@
   });
   shippingSelect.addEventListener('change',()=>{renderCart(); renderDeliveryFields();});
 
-  function openCart(){overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');showStep('cart');renderCart();}
+  function openCart(){overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');const sc=overlay.querySelector('[data-summary-content]'),os=overlay.querySelector('[data-order-success]'),st=overlay.querySelector('[data-order-send-status]'),sb=overlay.querySelector('[data-send-order]');if(sc)sc.hidden=false;if(os)os.hidden=true;if(st)st.textContent='';if(sb){sb.disabled=false;sb.textContent='Wyślij zamówienie';}showStep('cart');renderCart();}
   function closeCart(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');}
   function shippingItem(){return shipping[Number(shippingSelect.value)||0]||null;}
   function shippingCost(){const item=shippingItem(); if(!item||/bezpłat/i.test(item.cena))return 0; return parsePrice(item.cena)||0;}
@@ -227,14 +236,63 @@
     showStep('summary');
   });
 
-  overlay.querySelector('[data-send-order]').addEventListener('click',()=>{
+  const sendOrderButton=overlay.querySelector('[data-send-order]');
+  const sendOrderStatus=overlay.querySelector('[data-order-send-status]');
+  const summaryContent=overlay.querySelector('[data-summary-content]');
+  const orderSuccess=overlay.querySelector('[data-order-success]');
+
+  overlay.querySelector('[data-close-after-order]').addEventListener('click',closeCart);
+
+  sendOrderButton.addEventListener('click',async()=>{
+    if(!getCart().length){showStep('cart');renderCart();return;}
     const d=orderData(), c=d.customer;
     const lines=d.cart.map(x=>`- ${x.name} x ${x.qty} = ${money(x.price*x.qty)}`);
     const address=c.paczkomat?`Paczkomat: ${c.paczkomat}`:(c.street?`${c.street}, ${c.postal||''} ${c.city||''}`:'Odbiór osobisty');
-    const body=['Dzień dobry,','','Chcę złożyć zamówienie:',...lines,'',`Dostawa: ${d.ship?d.ship.nazwa+' — '+d.ship.cena:'do ustalenia'}`,`Płatność: ${d.payment}`,`Produkty: ${money(d.subtotal)}`,`Dostawa: ${money(d.delivery)}`,`Razem: ${money(d.total)}`,'','Dane zamawiającego:',c.name,c.email,c.phone,address,'',`Uwagi: ${c.notes||'brak'}`].join('\n');
-    const subject='Zamówienie — Pracownia Natury EKO';
-    const email=(window.CONTACT&&window.CONTACT.email)||'';
-    window.location.href=`mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const email=(window.CONTACT&&window.CONTACT.email)||'aga_bialk@int.pl';
+    const endpoint=`https://formsubmit.co/ajax/${email}`;
+    const payload={
+      _subject:'Nowe zamówienie — Pracownia Natury EKO',
+      _template:'table',
+      _replyto:c.email,
+      _url:window.location.href,
+      name:c.name,
+      email:c.email,
+      phone:c.phone,
+      products:lines.join('\n'),
+      delivery_method:d.ship?`${d.ship.nazwa} — ${d.ship.cena}`:'do ustalenia',
+      delivery_address:address,
+      payment:d.payment,
+      products_total:money(d.subtotal),
+      delivery_cost:money(d.delivery),
+      order_total:money(d.total),
+      notes:c.notes||'brak'
+    };
+
+    sendOrderButton.disabled=true;
+    sendOrderButton.textContent='Wysyłanie…';
+    sendOrderStatus.textContent='Wysyłamy zamówienie do Pracowni…';
+
+    try{
+      const response=await fetch(endpoint,{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify(payload)
+      });
+      const result=await response.json().catch(()=>({}));
+      if(!response.ok || result.success===false) throw new Error(result.message||'Nie udało się wysłać zamówienia.');
+
+      localStorage.setItem(STORAGE_KEY,'[]');
+      renderCart();
+      form.reset();
+      sendOrderStatus.textContent='';
+      summaryContent.hidden=true;
+      orderSuccess.hidden=false;
+    }catch(error){
+      console.error('Błąd wysyłania zamówienia:',error);
+      sendOrderStatus.textContent='Nie udało się wysłać zamówienia. Sprawdź połączenie z internetem i spróbuj ponownie.';
+      sendOrderButton.disabled=false;
+      sendOrderButton.textContent='Wyślij zamówienie';
+    }
   });
 
   renderCart();

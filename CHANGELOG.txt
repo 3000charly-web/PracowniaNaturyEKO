@@ -1,3 +1,7 @@
+v2.3.5
+- Zmieniono finalizację zamówienia: przycisk „Wyślij zamówienie” wysyła dane automatycznie przez FormSubmit na adres Pracowni, bez otwierania programu pocztowego klienta.
+- Po poprawnym wysłaniu klient widzi na stronie potwierdzenie, a dalsze potwierdzenie zamówienia i płatności odbywa się mailowo.
+
 v2.3.4
 - Poprawiono wdrożenie poprzednio zatwierdzonych zmian. Tylko trzy pionowe zdjęcia butelek („Syrop z owoców czarnego bzu”, „Ocet z wrotyczu”, „Zioła szwedzkie”) są teraz wyświetlane w całości w ramce bez modyfikowania plików zdjęć.
 - Dodano widoczny przycisk „Wyczyść koszyk”, usuwający wszystkie pozycje po potwierdzeniu.

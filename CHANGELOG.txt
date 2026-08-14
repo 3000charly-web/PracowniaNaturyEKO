@@ -1,3 +1,11 @@
+v2.3.7
+- Dodano nowy produkt w kategorii „Zioła i kompozycje”: Suszony rumianek (50 g, 10 zł, dostępny) wraz z zaakceptowanym opisem i nowym zdjęciem do sklepu.
+- Dodano nowy wpis w sekcji „Z życia Pracowni”: „Suszenie rumianku” z oryginalnym zdjęciem i opisem etapu suszenia.
+
+v2.3.6
+- Dodano Cloudflare Web Analytics do publicznych stron sklepu, aby mierzyć liczbę wizyt i odsłon.
+- Nie zmieniono wyglądu, produktów ani działania sklepu.
+
 v2.3.5
 - Zmieniono finalizację zamówienia: przycisk „Wyślij zamówienie” wysyła dane automatycznie przez FormSubmit na adres Pracowni, bez otwierania programu pocztowego klienta.
 - Po poprawnym wysłaniu klient widzi na stronie potwierdzenie, a dalsze potwierdzenie zamówienia i płatności odbywa się mailowo.

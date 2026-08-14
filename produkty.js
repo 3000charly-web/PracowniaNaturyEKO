@@ -143,6 +143,16 @@ window.PRODUCTS = {
     "cena": "80 g – 15 zł",
     "dostepnosc": "Dostępny"
   },
+  "suszony-rumianek": {
+    "nazwa": "Suszony rumianek",
+    "opis": "Suszony rumianek przygotowany w niewielkich partiach, z dbałością o zachowanie naturalnego wyglądu i aromatu. Do domowych naparów oraz własnych kompozycji ziołowych.",
+    "sklad": "100% suszony rumianek.",
+    "sposob": "Stosować zgodnie z przeznaczeniem produktu.",
+    "zastosowanie": "Surowiec zielarski do przygotowania naparów i własnych kompozycji ziołowych.",
+    "dodatkowe": "Opakowanie 50 g. Przechowywać w suchym i zacienionym miejscu.",
+    "cena": "50 g – 10 zł",
+    "dostepnosc": "Dostępny"
+  },
   "syrop-czarny-bez": {
     "nazwa": "Syrop z owoców czarnego bzu",
     "opis": "Sezonowy syrop przygotowywany z owoców czarnego bzu w niewielkich partiach.",

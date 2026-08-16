@@ -107,3 +107,7 @@ v2.0.11
 - Zioła szwedzkie: nowe zdjęcie i opis.
 - Topinambur i czarna malwa pozostają wyłącznie w Atlasie.
 - Dodano dwa zdjęcia do sekcji Z życia Pracowni.
+[v2.3.8]
+- Dodano na pierwszej pozycji sekcji „Z życia Pracowni” nowy wpis: „Etapy tworzenia octu z aksamitki”.
+- Wpis zawiera dwa zdjęcia pokazujące proces: świeżo zebrane kwiaty oraz nastaw w słoju.
+

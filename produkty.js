@@ -62,11 +62,21 @@ window.PRODUCTS = {
   "mazidelko-wrotyczowe": {
     "nazwa": "Mazidełko wrotyczowe",
     "opis": "Z radością przedstawiam moje ręcznie robione mazidełko wrotyczowe, przygotowane z dbałością o jakość i zgodnie z tradycyjnymi recepturami zielarskimi.",
-    "sklad": "Kwiat Wrotyczu, tłuszcz",
+    "sklad": "Kwiat wrotyczu, tłuszcz wołowy",
     "sposob": "Nanieść niewielką ilość na nieuszkodzoną skórę i delikatnie wmasować. Tylko do użytku zewnętrznego.",
     "zastosowanie": "Maść z wrotyczu służy głównie do zewnętrznej pielęgnacji skóry problematycznej, łagodzenia stanów zapalnych oraz zwalczania pasożytów skórnych. Pomaga w walce z trądzikiem, opryszczką, łuszczycą oraz łagodzi świąd po ukąszeniach owadów.",
     "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową.",
     "cena": "100 ml – 30 zł",
+    "dostepnosc": "Dostępny"
+  },
+  "mazidelko-wrotyczowe-gesi": {
+    "nazwa": "Mazidełko wrotyczowe na tłuszczu gęsim",
+    "opis": "Z radością przedstawiam moje ręcznie robione mazidełko wrotyczowe, przygotowane z dbałością o jakość i zgodnie z tradycyjnymi recepturami zielarskimi.",
+    "sklad": "Kwiat wrotyczu, tłuszcz gęsi",
+    "sposob": "Nanieść niewielką ilość na nieuszkodzoną skórę i delikatnie wmasować. Tylko do użytku zewnętrznego.",
+    "zastosowanie": "Maść z wrotyczu służy głównie do zewnętrznej pielęgnacji skóry problematycznej, łagodzenia stanów zapalnych oraz zwalczania pasożytów skórnych. Pomaga w walce z trądzikiem, opryszczką, łuszczycą oraz łagodzi świąd po ukąszeniach owadów.",
+    "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową.",
+    "cena": "100 ml – 45 zł",
     "dostepnosc": "Dostępny"
   },
   "dezodorant-rozany": {
@@ -98,6 +108,23 @@ window.PRODUCTS = {
     "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć.",
     "cena": "1 litr – 50 zł",
     "dostepnosc": "Niedostępny"
+  },
+
+  "ocet-bez-cytryna": {
+    "nazwa": "Ocet z kwiatów bzu czarnego i cytryny",
+    "opis": "Domowy ocet przygotowany z kwiatów czarnego bzu i cytryny, w niewielkich partiach i z zachowaniem naturalnego procesu fermentacji. Ma delikatny, kwiatowo-cytrusowy aromat i charakterystyczny smak. Produkt przygotowywany ręcznie w Pracowni Natury EKO.",
+    "sklad": "Kwiaty bzu czarnego, cytryna, woda, cukier.",
+    "dodatkowe": "Pojemność 1 litr.",
+    "cena": "1 litr – 50 zł",
+    "dostepnosc": "Dostępny"
+  },
+  "ocet-aksamitka": {
+    "nazwa": "Ocet z kwiatów aksamitki",
+    "opis": "Domowy ocet przygotowany z kwiatów aksamitki, w niewielkich partiach i z zachowaniem naturalnego procesu fermentacji. Ma charakterystyczny kwiatowy aromat i intensywną barwę. Przygotowywany ręcznie w Pracowni Natury EKO.",
+    "sklad": "Aksamitka, woda, cukier.",
+    "dodatkowe": "Pojemność 500 ml.",
+    "cena": "500 ml – 35 zł",
+    "dostepnosc": "Dostępny"
   },
 
   "mazidelko-wrotycz-glistnik": {

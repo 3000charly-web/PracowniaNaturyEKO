@@ -110,4 +110,13 @@ v2.0.11
 [v2.3.8]
 - Dodano na pierwszej pozycji sekcji „Z życia Pracowni” nowy wpis: „Etapy tworzenia octu z aksamitki”.
 - Wpis zawiera dwa zdjęcia pokazujące proces: świeżo zebrane kwiaty oraz nastaw w słoju.
+[v2.3.9]
+- Podmieniono zdjęcie produktu „Ocet jabłkowy” na zaakceptowaną wersję i przygotowano je bezpośrednio w proporcji ramki sklepowej (1200 × 700).
+[v2.3.10]
+- Mazidełko wrotyczowe: doprecyzowano skład na „Kwiat wrotyczu, tłuszcz wołowy”.
+- Dodano dostępny produkt „Mazidełko wrotyczowe na tłuszczu gęsim” (100 ml – 45 zł) z zaakceptowanym zdjęciem sklepowym.
+- Dodano dostępny produkt „Ocet z kwiatów bzu czarnego i cytryny” (1 litr – 50 zł), skład: kwiaty bzu czarnego, cytryna, woda, cukier.
+- Dodano dostępny produkt „Ocet z kwiatów aksamitki” (500 ml – 35 zł), skład: aksamitka, woda, cukier.
+- Zachowano zaakceptowaną w v2.3.9 podmianę zdjęcia produktu „Ocet jabłkowy”.
+- Nowe zdjęcia produktowe przygotowano bezpośrednio do ramki sklepowej 1200 × 700; znak wodny pozostaje warstwą systemową strony.
 

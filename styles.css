@@ -184,3 +184,11 @@
 }
 
 .cart-clear-button{display:block;margin:.8rem 0 1rem auto;border:1px solid #b86a5a;background:transparent;color:#9b493c;border-radius:999px;padding:.55rem .9rem;font:700 .75rem Arial,sans-serif;cursor:pointer}.cart-clear-button:hover{background:#fff3ef}.cart-clear-button:disabled{opacity:.45;cursor:not-allowed}.cart-clear-button:disabled:hover{background:transparent}
+
+/* v2.3.12: Zakwas buraczany — pokaż cały przygotowany kadr, bez automatycznego przycinania cover */
+[data-product="zakwas-buraczany"] .product-image-wrap>img{
+  object-fit:contain !important;
+  object-position:center !important;
+  padding:0 !important;
+  background:var(--linen);
+}

@@ -119,4 +119,26 @@ v2.0.11
 - Dodano dostępny produkt „Ocet z kwiatów aksamitki” (500 ml – 35 zł), skład: aksamitka, woda, cukier.
 - Zachowano zaakceptowaną w v2.3.9 podmianę zdjęcia produktu „Ocet jabłkowy”.
 - Nowe zdjęcia produktowe przygotowano bezpośrednio do ramki sklepowej 1200 × 700; znak wodny pozostaje warstwą systemową strony.
+[v2.3.11]
+- Podmieniono zdjęcie produktu „Zakwas buraczany” na zaakceptowaną kompozycję z butelką zakwasu i słojem na drugim planie.
+- Podmieniono zdjęcie produktu „Natto” na zaakceptowaną kompozycję z małym prostokątnym pojemnikiem 120 g na pierwszym planie i większą miseczką na drugim planie.
+- Oba zdjęcia przygotowano do ramki sklepowej 1200 × 700.
 
+
+[v2.3.12]
+- Zakwas buraczany: wyłączono lokalnie przycinanie zdjęcia przez object-fit: cover; karta pokazuje cały zaakceptowany kadr.
+- Bez zmian w pozostałych zdjęciach i kartach produktów.
+
+[v2.3.13]
+- Zakwas buraczany: przywrócono pełną zaakceptowaną kompozycję zdjęcia bez kadrowania środka.
+- Zdjęcie przygotowano do ramki 1200 × 700 przez zachowanie całego oryginalnego kadru i uzupełnienie wyłącznie boków.
+- Bez zmian w pozostałych produktach, zdjęciach i funkcjach strony.
+
+v2.3.14
+- Zakwas buraczany: podmiana zdjęcia na zaakceptowany szeroki kadr 1200 × 700, bez innych zmian.
+
+v2.3.15
+- Syrop z owoców czarnego bzu: dostępny.
+- Pojemność zmieniona z 200 ml na 300 ml.
+- Cena zmieniona z 15 zł na 20 zł.
+- Skład: czarny bez, cukier, woda, goździki, cynamon, cytryna.

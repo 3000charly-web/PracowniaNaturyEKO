@@ -183,12 +183,12 @@ window.PRODUCTS = {
   "syrop-czarny-bez": {
     "nazwa": "Syrop z owoców czarnego bzu",
     "opis": "Sezonowy syrop przygotowywany z owoców czarnego bzu w niewielkich partiach.",
-    "sklad": "Skład zgodny z aktualną recepturą produktu.",
+    "sklad": "Czarny bez, cukier, woda, goździki, cynamon, cytryna.",
     "sposob": "Stosować zgodnie z informacją przekazywaną do produktu.",
     "zastosowanie": "Produkt spożywczy.",
-    "dodatkowe": "Pojemność 200 ml.",
-    "cena": "200 ml – 15 zł",
-    "dostepnosc": "Niedostępny"
+    "dodatkowe": "Pojemność 300 ml.",
+    "cena": "300 ml – 20 zł",
+    "dostepnosc": "Dostępny"
   },
   "ocet-wrotycz": {
     "nazwa": "Ocet z wrotyczu",

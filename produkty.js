@@ -2,7 +2,7 @@ window.PRODUCTS = {
   "zakwas-buraczany": {
     "nazwa": "Zakwas buraczany",
     "opis": "Naturalnie fermentowany napój z buraków, przygotowywany metodą tradycyjną.",
-    "sklad": "Buraki.",
+    "sklad": "Buraki, woda, cukier.",
     "sposob": "Dawka: Pij od 50 do 250 ml dziennie dla dorosłych (zacznij od 1 małej łyżeczki, aby przyzwyczaić brzuch). Rano na czczo lub przed posiłkiem, jeśli nie masz bólu żołądka.",
     "zastosowanie": "Produkt spożywczy do codziennego urozmaicenia diety.",
     "dodatkowe": "Dostępność najlepiej potwierdzić bezpośrednio.",
@@ -15,7 +15,7 @@ window.PRODUCTS = {
     "sklad": "Ziarna soi i kultura fermentacyjna użyta do przygotowania natto.",
     "sposob": "Może być spożywane samodzielnie lub jako dodatek do potraw.",
     "zastosowanie": "Natto to tradycyjny japoński produkt z fermentowanej soi, który znajduje główne zastosowanie w zdrowiu układu krążenia, wzmocnieniu kości oraz kuchni.",
-    "dodatkowe": "Produkt przygotowywany w niewielkich partiach. Opakowanie 120 g.",
+    "dodatkowe": "Produkt przygotowywany w niewielkich partiach. Opakowanie 120 g. Dostępność najlepiej potwierdzić bezpośrednio.",
     "cena": "120 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
@@ -32,9 +32,9 @@ window.PRODUCTS = {
   "enzymy-bolotowa": {
     "nazwa": "Zakwas Enzymy Bołotowa",
     "opis": "Tradycyjnie przygotowywany ferment na koziej serwatce, dojrzewający w małych partiach.",
-    "sklad": "Skład aktualnej partii uzupełnij zgodnie z rzeczywistą recepturą.",
-    "sposob": "Sposób stosowania uzupełnij zgodnie z informacją przekazywaną klientom.",
-    "zastosowanie": "Enzymy Bołotowa (znane jako kwas lub zakwas z glistnikiem) stosuje się głównie do wspomagania trawienia, oczyszczania organizmu oraz regeneracji komórek. Ten sfermentowany napój bazuje najczęściej na serwatce, glistniku (jaskółczym zielu).",
+    "sklad": "Serwatka kozia, glistnik.",
+    "sposob": "1 łyżka 2–3 razy dziennie, zazwyczaj 20–40 minut przed posiłkiem.",
+    "zastosowanie": "Enzymy Bołotowa, znane również jako kwas lub zakwas z glistnikiem, to tradycyjnie przygotowywany ferment na bazie serwatki i glistnika (jaskółczego ziela).",
     "dodatkowe": "Dostępność zależy od czasu fermentacji i aktualnej partii.",
     "cena": "1 litr – 45 zł",
     "dostepnosc": "Dostępny"
@@ -43,7 +43,7 @@ window.PRODUCTS = {
     "nazwa": "Nalewka z zielonego orzecha",
     "opis": "Przygotowywana z młodych zielonych orzechów zbieranych sezonowo.",
     "sklad": "Młode zielone orzechy włoskie oraz składniki użyte w aktualnej recepturze.",
-    "sposob": "Informację o sposobie użycia uzupełnij zgodnie z etykietą produktu.",
+    "sposob": "Spożywać w niewielkich ilościach, samodzielnie lub po rozcieńczeniu z wodą. Produkt przeznaczony dla osób dorosłych.",
     "zastosowanie": "Nalewka z zielonych orzechów włoskich (orzechówka) to tradycyjny środek stosowany głównie na problemy z układem pokarmowym, niestrawność oraz do zwalczania pasożytów jelitowych.",
     "dodatkowe": "Produkt dostępny w ograniczonych partiach.",
     "cena": "200 ml – 50 zł",
@@ -105,16 +105,18 @@ window.PRODUCTS = {
     "sklad": "Jabłka, woda.",
     "sposob": "1–2 łyżki rozcieńczyć w szklance wody lub stosować jako dodatek do sałatek, surówek i innych potraw.",
     "zastosowanie": "Produkt spożywczy do urozmaicenia codziennej diety oraz jako dodatek kulinarny.",
-    "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć.",
+    "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć. Dostępność najlepiej potwierdzić bezpośrednio.",
     "cena": "1 litr – 50 zł",
-    "dostepnosc": "Niedostępny"
+    "dostepnosc": "Dostępny"
   },
 
   "ocet-bez-cytryna": {
     "nazwa": "Ocet z kwiatów bzu czarnego i cytryny",
     "opis": "Domowy ocet przygotowany z kwiatów czarnego bzu i cytryny, w niewielkich partiach i z zachowaniem naturalnego procesu fermentacji. Ma delikatny, kwiatowo-cytrusowy aromat i charakterystyczny smak. Produkt przygotowywany ręcznie w Pracowni Natury EKO.",
     "sklad": "Kwiaty bzu czarnego, cytryna, woda, cukier.",
-    "dodatkowe": "Pojemność 1 litr.",
+    "sposob": "1–2 łyżeczki rozcieńczyć w szklance wody. Można też stosować jako dodatek do sałatek, sosów i marynat.",
+    "zastosowanie": "Naturalny ocet o delikatnym, kwiatowo-cytrusowym aromacie. Sprawdza się w kuchni oraz, po odpowiednim rozcieńczeniu, w domowej pielęgnacji skóry i włosów.",
+    "dodatkowe": "Produkt naturalnie fermentowany, niepasteryzowany i niefiltrowany. Naturalny osad jest normalną cechą produktu. Dostępność zależy od aktualnej partii.",
     "cena": "1 litr – 50 zł",
     "dostepnosc": "Dostępny"
   },
@@ -122,7 +124,9 @@ window.PRODUCTS = {
     "nazwa": "Ocet z kwiatów aksamitki",
     "opis": "Domowy ocet przygotowany z kwiatów aksamitki, w niewielkich partiach i z zachowaniem naturalnego procesu fermentacji. Ma charakterystyczny kwiatowy aromat i intensywną barwę. Przygotowywany ręcznie w Pracowni Natury EKO.",
     "sklad": "Aksamitka, woda, cukier.",
-    "dodatkowe": "Pojemność 500 ml.",
+    "sposob": "Stosować po rozcieńczeniu z wodą lub jako dodatek do sałatek, sosów i marynat.",
+    "zastosowanie": "Aromatyczny ocet o wyraźnej kwiatowej nucie. Sprawdza się w kuchni, a po odpowiednim rozcieńczeniu może być stosowany także w domowej pielęgnacji skóry i włosów.",
+    "dodatkowe": "Produkt naturalnie fermentowany. Może zawierać naturalny osad. Dostępność zależy od aktualnej partii.",
     "cena": "500 ml – 35 zł",
     "dostepnosc": "Dostępny"
   },

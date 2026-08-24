@@ -142,3 +142,8 @@ v2.3.15
 - Pojemność zmieniona z 200 ml na 300 ml.
 - Cena zmieniona z 15 zł na 20 zł.
 - Skład: czarny bez, cukier, woda, goździki, cynamon, cytryna.
+
+v2.3.16
+- Zaktualizowano wyłącznie ustalone opisy i dostępność wybranych produktów: Enzymy Bołotowa, Zakwas buraczany, Natto, Ocet jabłkowy, Ocet z kwiatów bzu czarnego i cytryny, Ocet z kwiatów aksamitki oraz sposób użycia Nalewki z zielonego orzecha.
+- Na stronie głównej dodano sekcję „Zobacz, jak powstają nasze wyroby” z odnośnikami do YouTube i Facebooka, pod kafelkami kategorii i przed sekcją „Prawdziwa osoba. Prawdziwa praca.”
+- Nie zmieniono żadnych grafik, zdjęć, stylów ani pozostałego układu strony.

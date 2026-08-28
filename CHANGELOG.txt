@@ -147,3 +147,10 @@ v2.3.16
 - Zaktualizowano wyłącznie ustalone opisy i dostępność wybranych produktów: Enzymy Bołotowa, Zakwas buraczany, Natto, Ocet jabłkowy, Ocet z kwiatów bzu czarnego i cytryny, Ocet z kwiatów aksamitki oraz sposób użycia Nalewki z zielonego orzecha.
 - Na stronie głównej dodano sekcję „Zobacz, jak powstają nasze wyroby” z odnośnikami do YouTube i Facebooka, pod kafelkami kategorii i przed sekcją „Prawdziwa osoba. Prawdziwa praca.”
 - Nie zmieniono żadnych grafik, zdjęć, stylów ani pozostałego układu strony.
+
+v2.4
+- Formularz zamówienia: dodano obowiązkowy adres zamawiającego (ulica i numer, kod pocztowy, miejscowość).
+- Paczkomat InPost: zamiast dowolnego adresu formularz przyjmuje kod Paczkomatu w określonym formacie i odrzuca zwykły tekst; dodano odnośnik do oficjalnej wyszukiwarki Paczkomatów InPost.
+- W podsumowaniu i wiadomości z zamówieniem rozdzielono adres zamawiającego od adresu dostawy / kodu Paczkomatu.
+- Bez API i bez tokenu InPost; formularz sprawdza format kodu, ale nie potwierdza w bazie InPost, czy dany kod faktycznie istnieje.
+- Bez zmian w produktach, grafikach, zdjęciach i pozostałym układzie strony.

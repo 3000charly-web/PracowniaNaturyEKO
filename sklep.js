@@ -118,6 +118,12 @@
             <label>Telefon<input name="phone" type="tel" autocomplete="tel" required></label>
             <label class="full">E-mail<input name="email" type="email" autocomplete="email" required></label>
           </div>
+          <h3>Adres zamawiającego</h3>
+          <div class="checkout-grid">
+            <label class="full">Ulica i numer<input name="street" autocomplete="street-address" required></label>
+            <label>Kod pocztowy<input name="postal" autocomplete="postal-code" required inputmode="numeric" placeholder="00-000" pattern="[0-9]{2}-[0-9]{3}"></label>
+            <label>Miejscowość<input name="city" autocomplete="address-level2" required></label>
+          </div>
           <div class="delivery-fields" data-delivery-fields></div>
           <fieldset class="payment-choice"><legend>Sposób płatności</legend><label><input type="radio" name="payment" value="Przelew na konto" required> Przelew na konto</label><label><input type="radio" name="payment" value="Pobranie" required> Pobranie</label><label><input type="radio" name="payment" value="BLIK na telefon" required> BLIK na telefon</label></fieldset>
           <label class="full">Uwagi do zamówienia<textarea name="notes" rows="3" placeholder="Opcjonalnie"></textarea></label>
@@ -196,11 +202,11 @@
     const box=overlay.querySelector('[data-delivery-fields]');
     let html='<h3>Dane dostawy</h3>';
     if(/Paczkomat/i.test(name)){
-      html+='<label class="full">Paczkomat InPost<input name="paczkomat" required placeholder="np. KRA01N lub adres paczkomatu"></label>';
+      html+='<label class="full">Kod Paczkomatu InPost<input name="paczkomat" required placeholder="np. KRA01N" maxlength="12" autocapitalize="characters" spellcheck="false"></label><p class="delivery-hint">Wpisz wyłącznie kod Paczkomatu, nie adres. <a href="https://inpost.pl/znajdz-paczkomat" target="_blank" rel="noopener noreferrer">Znajdź Paczkomat na stronie InPost</a>.</p>';
     }else if(/Odbiór osobisty/i.test(name)){
-      html+='<p class="delivery-hint">Odbiór osobisty po wcześniejszym uzgodnieniu terminu. Adres dostawy nie jest wymagany.</p>';
+      html+='<p class="delivery-hint">Odbiór osobisty po wcześniejszym uzgodnieniu terminu.</p>';
     }else{
-      html+='<div class="checkout-grid"><label class="full">Ulica i numer<input name="street" autocomplete="street-address" required></label><label>Kod pocztowy<input name="postal" autocomplete="postal-code" required placeholder="00-000"></label><label>Miejscowość<input name="city" autocomplete="address-level2" required></label></div>';
+      html+='<p class="delivery-hint">Przesyłka zostanie wysłana na adres zamawiającego podany powyżej.</p>';
     }
     box.innerHTML=html;
     overlay.querySelector('[data-payment-info]').innerHTML='<strong>Płatność</strong>Wybierz: przelew na konto, pobranie albo BLIK na telefon.';
@@ -218,7 +224,16 @@
   }
   function validateForm(){
     if(!form.checkValidity()){form.reportValidity();return false;}
-    const delivery=shippingItem()?.nazwa||''; const pay=formDataObject().payment||'';
+    const delivery=shippingItem()?.nazwa||''; const data=formDataObject(); const pay=data.payment||'';
+    if(/Paczkomat/i.test(delivery)){
+      const input=form.querySelector('input[name="paczkomat"]');
+      const code=(data.paczkomat||'').trim().toUpperCase().replace(/\s+/g,'');
+      if(!/^[A-Z]{2,8}[0-9]{1,4}[A-Z]{0,2}$/.test(code)){
+        alert('Wpisz kod Paczkomatu InPost, np. KRA01N. Nie wpisuj adresu ani dowolnego tekstu.');
+        input?.focus(); return false;
+      }
+      if(input) input.value=code;
+    }
     if(/pobranie/i.test(delivery) && pay!=='Pobranie'){alert('Dla dostawy za pobraniem wybierz płatność „Pobranie”.');return false;}
     if(/przedpłata/i.test(delivery) && pay==='Pobranie'){alert('Dla tej dostawy wybierz „Przelew na konto” albo „BLIK na telefon”.');return false;}
     return true;
@@ -227,12 +242,13 @@
     e.preventDefault(); if(!validateForm())return;
     const d=orderData();
     const c=d.customer;
-    const address=c.paczkomat?`Paczkomat: ${c.paczkomat}`:(c.street?`${c.street}, ${c.postal||''} ${c.city||''}`:'Odbiór osobisty');
+    const customerAddress=`${c.street}, ${c.postal||''} ${c.city||''}`;
+    const deliveryAddress=c.paczkomat?`Paczkomat: ${c.paczkomat}`:(/Odbiór osobisty/i.test(d.ship?.nazwa||'')?'Odbiór osobisty':customerAddress);
     overlay.querySelector('[data-order-preview]').innerHTML=`
       <h3>Podsumowanie zamówienia</h3>
       <div class="order-preview-list">${d.cart.map(x=>`<div><span>${esc(x.name)} × ${x.qty}</span><strong>${money(x.price*x.qty)}</strong></div>`).join('')}</div>
       <div class="order-preview-totals"><div><span>Dostawa</span><strong>${money(d.delivery)}</strong></div><div class="grand"><span>Razem</span><strong>${money(d.total)}</strong></div></div>
-      <div class="order-customer"><p><strong>${esc(c.name)}</strong><br>${esc(c.email)}<br>${esc(c.phone)}</p><p>${esc(address)}</p><p><strong>Dostawa:</strong> ${esc(d.ship?.nazwa||'do ustalenia')}<br><strong>Płatność:</strong> ${esc(d.payment)}</p>${c.notes?`<p><strong>Uwagi:</strong> ${esc(c.notes)}</p>`:''}</div>`;
+      <div class="order-customer"><p><strong>${esc(c.name)}</strong><br>${esc(c.email)}<br>${esc(c.phone)}<br><strong>Adres zamawiającego:</strong> ${esc(customerAddress)}</p><p><strong>Adres dostawy:</strong> ${esc(deliveryAddress)}</p><p><strong>Dostawa:</strong> ${esc(d.ship?.nazwa||'do ustalenia')}<br><strong>Płatność:</strong> ${esc(d.payment)}</p>${c.notes?`<p><strong>Uwagi:</strong> ${esc(c.notes)}</p>`:''}</div>`;
     showStep('summary');
   });
 
@@ -247,7 +263,8 @@
     if(!getCart().length){showStep('cart');renderCart();return;}
     const d=orderData(), c=d.customer;
     const lines=d.cart.map(x=>`- ${x.name} x ${x.qty} = ${money(x.price*x.qty)}`);
-    const address=c.paczkomat?`Paczkomat: ${c.paczkomat}`:(c.street?`${c.street}, ${c.postal||''} ${c.city||''}`:'Odbiór osobisty');
+    const customerAddress=`${c.street}, ${c.postal||''} ${c.city||''}`;
+    const deliveryAddress=c.paczkomat?`Paczkomat: ${c.paczkomat}`:(/Odbiór osobisty/i.test(d.ship?.nazwa||'')?'Odbiór osobisty':customerAddress);
     const email=(window.CONTACT&&window.CONTACT.email)||'aga_bialk@int.pl';
     const endpoint=`https://formsubmit.co/ajax/${email}`;
     const payload={
@@ -259,8 +276,9 @@
       email:c.email,
       phone:c.phone,
       products:lines.join('\n'),
+      customer_address:customerAddress,
       delivery_method:d.ship?`${d.ship.nazwa} — ${d.ship.cena}`:'do ustalenia',
-      delivery_address:address,
+      delivery_address:deliveryAddress,
       payment:d.payment,
       products_total:money(d.subtotal),
       delivery_cost:money(d.delivery),

@@ -42,8 +42,6 @@
     }
   });
 
-
-  // Wysyłka i odbiór — ceny z pliku wysylka.js
   const shippingList=document.querySelector('[data-shipping-list]');
   if(shippingList){
     const shipping=Array.isArray(window.SHIPPING) ? window.SHIPPING : [];
@@ -52,7 +50,6 @@
     ).join('');
   }
 
-  // Dane kontaktowe z pliku kontakt.js
   const contact=window.CONTACT || {};
   const setText=(selector,value)=>{
     const el=document.querySelector(selector);
@@ -91,7 +88,6 @@
   configureLink('[data-contact-facebook]', contact.facebook);
 })();
 
-// Rozwijany dział „Prawdziwa osoba. Prawdziwa praca.”
 (()=>{
   const grid=document.querySelector('[data-workshop-grid]');
   if(!grid) return;
@@ -109,8 +105,6 @@
     </article>`).join('');
 })();
 
-
-// Formularz kontaktowy otwierany przyciskiem „Napisz wiadomość”.
 (()=>{
   const trigger=document.querySelector('[data-contact-form-button]');
   if(!trigger) return;
@@ -124,3 +118,10 @@
   modal.addEventListener('click',e=>{if(e.target===modal)close()});
   modal.querySelector('form').addEventListener('submit',e=>{e.preventDefault(); const form=e.currentTarget;if(!form.checkValidity()){form.reportValidity();return;} const d=Object.fromEntries(new FormData(form));const to=(window.CONTACT&&window.CONTACT.email)||'';const body=`Imię: ${d.name}\nE-mail: ${d.email}\n\n${d.message}`;window.location.href=`mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(d.subject)}&body=${encodeURIComponent(body)}`;});
 })();
+
+// Ładowanie modułu płatności Stripe po utworzeniu koszyka przez sklep.js.
+window.addEventListener('load',()=>{
+  const script=document.createElement('script');
+  script.src='stripe-payments.js';
+  document.body.append(script);
+});

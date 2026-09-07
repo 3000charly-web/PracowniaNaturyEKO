@@ -152,16 +152,6 @@
       };
       localStorage.setItem(PENDING_KEY,JSON.stringify(pending));
 
-      try{
-        await sendOrderEmail(
-          pending,
-          'Stripe — oczekuje na płatność',
-          'Nowe zamówienie — oczekuje na płatność'
-        );
-      }catch(mailError){
-        console.error('Nie udało się wysłać pierwszego e-maila o zamówieniu:',mailError);
-      }
-
       window.location.href=result.url;
     }catch(error){
       console.error('Błąd płatności Stripe:',error);

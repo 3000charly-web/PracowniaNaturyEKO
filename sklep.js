@@ -125,7 +125,7 @@
             <label>Miejscowość<input name="city" autocomplete="address-level2" required></label>
           </div>
           <div class="delivery-fields" data-delivery-fields></div>
-          <fieldset class="payment-choice"><legend>Sposób płatności</legend><label><input type="radio" name="payment" value="Przelew na konto" required> Przelew na konto</label><label><input type="radio" name="payment" value="Pobranie" required> Pobranie</label><label><input type="radio" name="payment" value="BLIK na telefon" required> BLIK na telefon</label></fieldset>
+          <fieldset class="payment-choice"><legend>Sposób płatności</legend><label><input type="radio" name="payment" value="Przelew na konto" required> Przelew na konto</label><label><input type="radio" name="payment" value="BLIK na telefon" required> BLIK na telefon</label></fieldset>
           <label class="full">Uwagi do zamówienia<textarea name="notes" rows="3" placeholder="Opcjonalnie"></textarea></label>
           <div class="payment-info" data-payment-info></div>
           <p class="checkout-note">Uzupełnij dane i przejdź do podsumowania. Zamówienie wyślesz bezpośrednio ze strony — bez otwierania programu pocztowego.</p>
@@ -209,7 +209,7 @@
       html+='<p class="delivery-hint">Przesyłka zostanie wysłana na adres zamawiającego podany powyżej.</p>';
     }
     box.innerHTML=html;
-    overlay.querySelector('[data-payment-info]').innerHTML='<strong>Płatność</strong>Wybierz: przelew na konto, pobranie albo BLIK na telefon.';
+    overlay.querySelector('[data-payment-info]').innerHTML='<strong>Płatność</strong>Wybierz: przelew na konto albo BLIK na telefon.';
   }
 
   overlay.querySelector('[data-go-details]').addEventListener('click',()=>{if(!getCart().length)return;renderDeliveryFields();showStep('details');});
@@ -224,7 +224,7 @@
   }
   function validateForm(){
     if(!form.checkValidity()){form.reportValidity();return false;}
-    const delivery=shippingItem()?.nazwa||''; const data=formDataObject(); const pay=data.payment||'';
+    const delivery=shippingItem()?.nazwa||''; const data=formDataObject();
     if(/Paczkomat/i.test(delivery)){
       const input=form.querySelector('input[name="paczkomat"]');
       const code=(data.paczkomat||'').trim().toUpperCase().replace(/\s+/g,'');
@@ -234,8 +234,6 @@
       }
       if(input) input.value=code;
     }
-    if(/pobranie/i.test(delivery) && pay!=='Pobranie'){alert('Dla dostawy za pobraniem wybierz płatność „Pobranie”.');return false;}
-    if(/przedpłata/i.test(delivery) && pay==='Pobranie'){alert('Dla tej dostawy wybierz „Przelew na konto” albo „BLIK na telefon”.');return false;}
     return true;
   }
   form.addEventListener('submit',e=>{

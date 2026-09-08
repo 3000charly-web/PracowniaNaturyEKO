@@ -107,7 +107,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy do urozmaicenia codziennej diety oraz jako dodatek kulinarny.",
     "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć. Dostępność najlepiej potwierdzić bezpośrednio.",
     "cena": "1 litr – 50 zł",
-    "dostepnosc": "Dostępny"
+    "dostepnosc": "Niedostępny"
   },
 
   "ocet-bez-cytryna": {
@@ -128,7 +128,7 @@ window.PRODUCTS = {
     "zastosowanie": "Aromatyczny ocet o wyraźnej kwiatowej nucie. Sprawdza się w kuchni, a po odpowiednim rozcieńczeniu może być stosowany także w domowej pielęgnacji skóry i włosów.",
     "dodatkowe": "Produkt naturalnie fermentowany. Może zawierać naturalny osad. Dostępność zależy od aktualnej partii.",
     "cena": "500 ml – 35 zł",
-    "dostepnosc": "Dostępny"
+    "dostepnosc": "Niedostępny"
   },
 
   "mazidelko-wrotycz-glistnik": {

@@ -3,14 +3,8 @@
   const CART_KEY='pracownia_natury_cart_v1';
   const PENDING_KEY='pracownia_natury_pending_stripe_v1';
 
-  const getCart=()=>{
-    try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch{return []}
-  };
-
-  const getPending=()=>{
-    try{return JSON.parse(localStorage.getItem(PENDING_KEY)||'null')}catch{return null}
-  };
-
+  const getCart=()=>{try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch{return []}};
+  const getPending=()=>{try{return JSON.parse(localStorage.getItem(PENDING_KEY)||'null')}catch{return null}};
   const money=value=>`${Number(value||0).toFixed(2).replace('.',',')} zł`;
 
   function formDataObject(){
@@ -31,7 +25,7 @@
       fieldset.innerHTML=`
         <legend>Sposób płatności</legend>
         <input type="hidden" name="payment" value="Płatność online Stripe">
-        <p class="delivery-hint">Płatność online przez Stripe: BLIK, karta, Przelewy24 lub Apple Pay (jeśli dostępne na urządzeniu).</p>`;
+        <p class="delivery-hint">Płatność online przez Stripe: BLIK, karta, Apple Pay, Google Pay lub Revolut Pay (zależnie od urządzenia i dostępności).</p>`;
     }
 
     const info=document.querySelector('[data-payment-info]');
@@ -99,18 +93,9 @@
     const ship=shippingItem();
     const c=formDataObject();
 
-    if(!cart.length){
-      alert('Koszyk jest pusty.');
-      return;
-    }
-    if(!form || !form.checkValidity()){
-      form?.reportValidity();
-      return;
-    }
-    if(!ship){
-      alert('Wybierz sposób dostawy.');
-      return;
-    }
+    if(!cart.length){alert('Koszyk jest pusty.');return;}
+    if(!form || !form.checkValidity()){form?.reportValidity();return;}
+    if(!ship){alert('Wybierz sposób dostawy.');return;}
 
     if(button){
       button.disabled=true;
@@ -143,15 +128,8 @@
         throw new Error(result.error||'Nie udało się utworzyć płatności.');
       }
 
-      const pending={
-        orderId:result.orderId,
-        cart,
-        ship,
-        customer:c,
-        createdAt:Date.now()
-      };
+      const pending={orderId:result.orderId,cart,ship,customer:c,createdAt:Date.now()};
       localStorage.setItem(PENDING_KEY,JSON.stringify(pending));
-
       window.location.href=result.url;
     }catch(error){
       console.error('Błąd płatności Stripe:',error);
@@ -220,11 +198,7 @@
 
       if(pending){
         try{
-          await sendOrderEmail(
-            pending,
-            'Stripe — OPŁACONO',
-            'Płatność potwierdzona'
-          );
+          await sendOrderEmail(pending,'Stripe — OPŁACONO','Płatność potwierdzona');
         }catch(mailError){
           console.error('Nie udało się wysłać potwierdzenia płatności:',mailError);
         }
@@ -244,14 +218,10 @@
     updatePaymentUi();
 
     const goDetails=document.querySelector('[data-go-details]');
-    if(goDetails){
-      goDetails.addEventListener('click',()=>setTimeout(updatePaymentUi,0));
-    }
+    if(goDetails) goDetails.addEventListener('click',()=>setTimeout(updatePaymentUi,0));
 
     const shippingSelect=document.querySelector('[data-cart-shipping]');
-    if(shippingSelect){
-      shippingSelect.addEventListener('change',()=>setTimeout(updatePaymentUi,0));
-    }
+    if(shippingSelect) shippingSelect.addEventListener('change',()=>setTimeout(updatePaymentUi,0));
 
     const button=document.querySelector('[data-send-order]');
     if(button){

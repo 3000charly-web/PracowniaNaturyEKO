@@ -225,3 +225,12 @@ v3.5
 - Podniesiono cały blok tekstów w głównym banerze wyżej, aby zostawić margines od dołu.
 - Karuzela na PC wyświetla teraz 5 produktów naraz.
 - Nie zmieniano innych sekcji strony.
+
+[v3.14]
+- Naprawiono działanie przycisku „Dodaj do koszyka” w karuzeli akcesoriów.
+- Przyciski karuzeli są teraz obsługiwane delegacją zdarzeń, więc działają także po automatycznym przepinaniu kart w pętli.
+- Nie zmieniano wyglądu ani pozostałych funkcji strony.
+
+[v3.15]
+- Podniesiono cały blok napisów w głównym banerze wyżej, aby zostawić większy margines od dołu.
+- Nie zmieniano innych sekcji strony.

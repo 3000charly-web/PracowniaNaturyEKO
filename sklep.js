@@ -77,9 +77,25 @@
       button.textContent='Niedostępny'; button.disabled=true; button.classList.add('disabled'); qty.classList.add('disabled');
     }else{
       button.textContent='🛒 Dodaj do koszyka';
-      button.addEventListener('click',()=>addProduct(key,input.value));
+      if(!card.classList.contains('collection-card')){
+        button.addEventListener('click',()=>addProduct(key,input.value));
+      }
     }
     buyRow.append(qty,button); actions.append(buyRow); body.append(actions);
+  });
+
+  // Karuzela jest dynamicznie przesuwana i karty są przepinane w DOM.
+  // Obsługujemy jej przyciski delegacją na dokumencie, dzięki czemu „Dodaj do koszyka”
+  // działa niezależnie od aktualnej pozycji karty w karuzeli.
+  document.addEventListener('click',e=>{
+    const button=e.target.closest('.collection-card [data-add-cart]');
+    if(!button) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const card=button.closest('.collection-card[data-product]');
+    if(!card) return;
+    const input=card.querySelector('.product-qty input');
+    addProduct(button.dataset.addCart||card.dataset.product,input?.value||1);
   });
 
   // Przycisk koszyka w menu.

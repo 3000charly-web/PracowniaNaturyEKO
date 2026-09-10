@@ -281,3 +281,9 @@
   .collection-track{gap:.55rem;padding:.08rem}
   .collection-card{flex:0 0 calc((100% - 2.2rem)/5)}
 }
+
+
+/* === v3.15 — podniesienie całego bloku napisów w banerze === */
+@media(min-width:901px){
+  .hero .content{transform:translateY(-26px)}
+}

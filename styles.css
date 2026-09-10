@@ -198,8 +198,86 @@
   .hero{min-height:0;height:clamp(320px,35vh,380px)}
   .hero .content{padding:.35rem 0;max-width:820px;margin-left:clamp(48px,5.5vw,110px);margin-right:0}
   .hero .eyebrow{font-size:.82rem;margin-bottom:.95rem}
-  .hero h1{font-size:clamp(4.6rem,7vw,7rem);line-height:.92;margin:0 0 .7rem}
-  .hero h1 span{display:block;font-size:clamp(1.45rem,2.25vw,2rem);line-height:1.22;margin-top:.6rem;max-width:760px;font-weight:400}
-  .hero .motto{font-size:clamp(1.45rem,2vw,1.75rem);margin:.55rem 0 .5rem}
-  .hero .content>p:not(.motto){font-size:1.02rem;line-height:1.45;margin:.4rem 0;max-width:670px}
+  .hero h1{font-size:clamp(3.8rem,5.7vw,5.8rem);line-height:.94;margin:0 0 .55rem}
+  .hero h1 span{display:block;font-size:clamp(1.18rem,1.8vw,1.55rem);line-height:1.2;margin-top:.45rem;max-width:720px;font-weight:400}
+  .hero .motto{font-size:clamp(1.15rem,1.55vw,1.35rem);margin:.42rem 0 .42rem}
+  .hero .content>p:not(.motto){font-size:.96rem;line-height:1.42;margin:.32rem 0;max-width:620px}
+}
+
+
+/* === v3.5 — dodatkowa karuzela mieszanych akcesoriów pod sklepem === */
+.collection-showcase{background:#fff;padding-top:1.5rem}.collection-carousel{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:.9rem;align-items:center}.collection-track{display:flex;gap:1rem;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x proximity;padding:.2rem;scrollbar-width:none}.collection-track::-webkit-scrollbar{display:none}.collection-card{flex:0 0 calc((100% - 2rem)/3);min-width:0;background:#fff;border:1px solid #ded5c7;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);scroll-snap-align:start}.collection-card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--linen)}.collection-card .body{padding:1.1rem 1.15rem 1.2rem}.collection-card h3{margin:.1rem 0 .35rem;color:var(--green);font-size:1.18rem;line-height:1.2}.collection-card p{margin:0;color:var(--muted);font-size:.95rem}.collection-nav{width:44px;height:44px;border-radius:999px;border:1px solid #d8cfbf;background:#fff;color:var(--green);font-size:1.55rem;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px rgba(35,55,35,.08);transition:.2s}.collection-nav:hover{transform:translateY(-2px);background:#f8f3e8}.collection-nav:focus-visible{outline:2px solid var(--green2);outline-offset:2px}@media(max-width:900px){.collection-card{flex-basis:calc((100% - 1rem)/2)}}@media(max-width:600px){.collection-showcase{padding-top:1rem}.collection-carousel{grid-template-columns:1fr;gap:.7rem}.collection-track{order:1}.collection-nav{display:none}.collection-card{flex-basis:86%}.collection-card h3{font-size:1.1rem}}
+/* === v3.6 — tylko karuzela: mniejszy nagłówek + auto-przewijanie w JS === */
+.collection-showcase .title{font-size:clamp(1.45rem,2.15vw,2.1rem);line-height:1.08}
+@media(max-width:600px){.collection-showcase .title{font-size:1.6rem}}
+
+
+
+/* === v3.7 — karuzela jako pełnoprawna część sklepu === */
+.collection-price{margin:.55rem 0 .7rem!important;color:var(--green)!important;font-weight:800;font-size:1.08rem!important}
+.collection-card .shop-actions{margin-top:.75rem}
+.collection-card .buy-row{grid-template-columns:max-content max-content minmax(0,1fr)}
+.collection-card .shop-availability{font-size:.72rem}
+.collection-card .add-cart-btn{font-size:.7rem;padding:.65rem .5rem}
+@media(max-width:600px){
+  .collection-card .buy-row{grid-template-columns:max-content max-content minmax(0,1fr)}
+  .collection-card .shop-availability{font-size:.69rem}
+  .collection-card .add-cart-btn{font-size:.67rem;padding:.62rem .45rem}
+}
+
+
+/* === v3.11 — zmniejszenie karuzeli o ok. 30% na PC === */
+@media(min-width:901px){
+  .collection-carousel{max-width:70%;margin:0 auto;gap:.65rem}
+  .collection-track{gap:.7rem;padding:.1rem}
+  .collection-card{flex-basis:calc((100% - 1.4rem)/3);border-radius:16px}
+  .collection-card .body{padding:.85rem .9rem .95rem}
+  .collection-card h3{font-size:1rem}
+  .collection-card p{font-size:.85rem}
+  .collection-price{font-size:.95rem!important;margin:.42rem 0 .55rem!important}
+  .collection-nav{width:38px;height:38px;font-size:1.35rem}
+  .collection-card .shop-actions{margin-top:.55rem}
+  .collection-card .shop-availability{font-size:.66rem}
+  .collection-card .product-qty button{width:1.6rem}
+  .collection-card .product-qty input{width:1.75rem}
+  .collection-card .add-cart-btn{font-size:.64rem;padding:.58rem .4rem}
+}
+
+
+/* === v3.12 — hero wyżej i mniejsze nagłówki + 4 produkty w karuzeli na PC === */
+@media(min-width:901px){
+  .hero{height:clamp(300px,33vh,360px);align-items:start}
+  .hero .content{padding:1.8rem 0 .9rem;max-width:760px;margin-left:clamp(48px,5.5vw,100px)}
+  .hero .eyebrow{font-size:.8rem;margin-bottom:.72rem}
+  .hero h1{font-size:clamp(3rem,4.9vw,4.9rem);line-height:.94;margin:0 0 .38rem}
+  .hero h1 span{font-size:clamp(1.02rem,1.45vw,1.28rem);line-height:1.18;margin-top:.32rem;max-width:620px}
+  .hero .motto{font-size:clamp(1rem,1.2vw,1.15rem);margin:.3rem 0 .28rem}
+  .hero .content>p:not(.motto){font-size:.9rem;line-height:1.34;margin:.22rem 0;max-width:560px}
+
+  .collection-showcase .title{font-size:clamp(1.05rem,1.7vw,1.65rem);line-height:1.08}
+  .collection-carousel{max-width:70%;margin:0 auto;gap:.6rem}
+  .collection-track{gap:.6rem;padding:.08rem}
+  .collection-card{flex:0 0 calc((100% - 1.8rem)/4);border-radius:15px}
+  .collection-card .body{padding:.78rem .8rem .88rem}
+  .collection-card h3{font-size:.92rem;margin:.08rem 0 .28rem}
+  .collection-card p{font-size:.8rem}
+  .collection-price{font-size:.9rem!important;margin:.34rem 0 .48rem!important}
+  .collection-nav{width:36px;height:36px;font-size:1.2rem}
+  .collection-card .shop-actions{margin-top:.48rem}
+  .collection-card .shop-availability{font-size:.62rem;margin:0 0 .48rem}
+  .collection-card .buy-row{gap:.35rem}
+  .collection-card .product-qty{min-height:38px}
+  .collection-card .product-qty button{width:1.45rem}
+  .collection-card .product-qty input{width:1.55rem;font-size:.8rem}
+  .collection-card .add-cart-btn{font-size:.6rem;padding:.52rem .34rem}
+}
+
+
+/* === v3.13 — baner: tekst wyżej; karuzela: 5 produktów na PC === */
+@media(min-width:901px){
+  .hero .content{padding:.55rem 0 .2rem;max-width:760px;margin-left:clamp(48px,5.5vw,100px)}
+  .hero h1{font-size:clamp(2.85rem,4.7vw,4.7rem)}
+  .collection-carousel{max-width:84%;margin:0 auto;gap:.6rem}
+  .collection-track{gap:.55rem;padding:.08rem}
+  .collection-card{flex:0 0 calc((100% - 2.2rem)/5)}
 }

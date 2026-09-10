@@ -170,3 +170,58 @@ v3.3
 v3.4
 - Poprawiono wyłącznie pozycję bloku tekstowego w banerze na PC, aby nie wychodził poza lewą krawędź ekranu.
 
+
+
+v3.5
+- Dodano pod sekcją „Sklep” nową karuzelę „Kolekcja Pracowni Natury EKO”.
+- W karuzeli umieszczono 11 mieszanych produktów / akcesoriów.
+- Do karuzeli użyto przygotowanych zdjęć bez strzałek i elementów podglądu.
+- Nie zmieniano pozostałych sekcji strony poza dodaniem nowej karuzeli.
+
+[v3.6]
+- Tylko karuzela pod sklepem: zmniejszono nagłówek „Kolekcja Pracowni Natury EKO”.
+- Tylko karuzela pod sklepem: dodano automatyczne przewijanie o jedną kartę co 3 sekundy.
+- Automatyczne przewijanie zatrzymuje się przy najechaniu myszką, fokusie klawiatury lub dotknięciu i wznawia po zakończeniu interakcji.
+- Strzałki ręcznego przewijania pozostają bez zmian.
+- Nie zmieniono innych elementów strony.
+
+
+[v3.7]
+- Karuzela akcesoriów została podłączona do istniejącego systemu koszyka.
+- Dodano ceny 11 produktów zgodnie z ustaleniem.
+- Wszystkie 11 produktów oznaczono jako „Dostępny”.
+- Dodano wybór ilości oraz przycisk „Dodaj do koszyka” na każdej karcie.
+- Dostawa pozostaje obsługiwana przez istniejący koszyk i dotychczasowe opcje dostawy.
+- Zachowano mniejszy nagłówek oraz automatyczne przewijanie karuzeli co 3 sekundy z v3.6.
+- Nie zmieniano pozostałych sekcji strony.
+
+[v3.8]
+- Poprawiono działanie karuzeli: zamiast skoku na początek przewija się teraz płynnie w pętli.
+- Zmieniono nazwę produktu „Biały organizer ażurowy” na „Pojemnik na jajka”.
+- Nie zmieniano innych sekcji strony.
+
+[v3.9]
+- Zmniejszono czcionkę w głównym banerze „Naturalnie”, razem z podtytułem i mottem.
+- Zmniejszono nagłówek sekcji „Kolekcja Pracowni Natury EKO”.
+- Zachowano wcześniejsze poprawki v3.8: płynna pętla karuzeli i nazwa „Pojemnik na jajka”.
+- Nie zmieniano innych elementów strony.
+
+[v3.10]
+- Usunięto techniczny opis przy sekcji „Kolekcja Pracowni Natury EKO” mówiący o roboczej karuzeli.
+- Nie zmieniano żadnych innych elementów strony.
+
+[v3.11]
+- Zmniejszono całą karuzelę o ok. 30% w widoku PC: szerokość sekcji, karty, strzałki i elementy wewnątrz kart.
+- Nie zmieniano innych sekcji strony.
+
+[v3.12]
+- Zmniejszono nagłówek „Naturalnie” i pozostałe napisy w głównym banerze.
+- Podniesiono cały blok tekstów w banerze wyżej.
+- Dodatkowo zmniejszono nagłówek „Kolekcja Pracowni Natury EKO”.
+- Karuzela na PC wyświetla teraz 4 produkty naraz.
+- Nie zmieniano innych sekcji strony.
+
+[v3.13]
+- Podniesiono cały blok tekstów w głównym banerze wyżej, aby zostawić margines od dołu.
+- Karuzela na PC wyświetla teraz 5 produktów naraz.
+- Nie zmieniano innych sekcji strony.

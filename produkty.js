@@ -204,4 +204,15 @@ window.PRODUCTS = {
     "cena": "200 ml – 20 zł",
     "dostepnosc": "Niedostępny"
   },
+  "akcesorium-wazon-czarny-azurowy": {"nazwa":"Czarny wazon ażurowy","cena":"29 zł","dostepnosc":"Dostępny"},
+  "akcesorium-wazon-rozowy-spiralny": {"nazwa":"Różowy wazon spiralny","cena":"29 zł","dostepnosc":"Dostępny"},
+  "akcesorium-wazon-bialy-falisty": {"nazwa":"Biały wazon falisty","cena":"29 zł","dostepnosc":"Dostępny"},
+  "akcesorium-masazer-rolka-wypustkowa": {"nazwa":"Ręczny masażer z rolką wypustkową","cena":"25 zł","dostepnosc":"Dostępny"},
+  "akcesorium-walek-do-masazu": {"nazwa":"Ręczny wałek do masażu","cena":"25 zł","dostepnosc":"Dostępny"},
+  "akcesorium-masazer-do-stop": {"nazwa":"Masażer do stóp","cena":"39 zł","dostepnosc":"Dostępny"},
+  "akcesorium-donica-oliwkowa": {"nazwa":"Oliwkowa donica z podstawką","cena":"39 zł","dostepnosc":"Dostępny"},
+  "akcesorium-polka-bezowa": {"nazwa":"Beżowa półka ścienna","cena":"29 zł","dostepnosc":"Dostępny"},
+  "akcesorium-wazon-czarny-falisty": {"nazwa":"Czarny wazon falisty","cena":"29 zł","dostepnosc":"Dostępny"},
+  "akcesorium-organizer-bialy": {"nazwa":"Pojemnik na jajka","cena":"39 zł","dostepnosc":"Dostępny"},
+  "akcesorium-organizer-jajka": {"nazwa":"Czarny organizer na jajka","cena":"49 zł","dostepnosc":"Dostępny"},
 };

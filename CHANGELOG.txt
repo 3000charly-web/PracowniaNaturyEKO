@@ -1,3 +1,10 @@
+v3.2
+- Menu: zmieniono wyłącznie nazwę pozycji „Nasze wyroby” na „Sklep”; link nadal prowadzi do tej samej sekcji #wyroby.
+- Strona główna, widok PC: zmniejszono wysokość głównego banera i zagęszczono jego pionowe odstępy; grafika, treść i przyciski pozostają bez zmian.
+- Przeniesiono istniejący blok czterech kafelków „Naturalne składniki / Ręczna praca / Tradycyjne receptury / Szacunek dla natury” pod sekcję sklepu, bez zmiany jego treści i wyglądu.
+- Usunięto techniczny tekst o samodzielnym rozbudowywaniu sekcji „Poznaj Pracownię” w pliku pracownia.js.
+- Poza powyższym zakresem nie zmieniano produktów, zdjęć, płatności, koszyka ani pozostałych treści strony.
+
 v2.3.7
 - Dodano nowy produkt w kategorii „Zioła i kompozycje”: Suszony rumianek (50 g, 10 zł, dostępny) wraz z zaakceptowanym opisem i nowym zdjęciem do sklepu.
 - Dodano nowy wpis w sekcji „Z życia Pracowni”: „Suszenie rumianku” z oryginalnym zdjęciem i opisem etapu suszenia.
@@ -154,3 +161,12 @@ v2.4
 - W podsumowaniu i wiadomości z zamówieniem rozdzielono adres zamawiającego od adresu dostawy / kodu Paczkomatu.
 - Bez API i bez tokenu InPost; formularz sprawdza format kodu, ale nie potwierdza w bazie InPost, czy dany kod faktycznie istnieje.
 - Bez zmian w produktach, grafikach, zdjęciach i pozostałym układzie strony.
+
+v3.3
+- Baner główny na stronie głównej: zachowano zmniejszoną wysokość z v3.2, a blok tekstowy ustawiono bardziej w lewo i wyraźnie powiększono, aby lepiej pasował do nowych proporcji hero.
+- Z górnego banera usunięto przyciski „Poznaj nasze wyroby” i „Poznaj Pracownię”.
+- Bez zmian w pozostałych sekcjach, produktach, grafikach i funkcjach strony.
+
+v3.4
+- Poprawiono wyłącznie pozycję bloku tekstowego w banerze na PC, aby nie wychodził poza lewą krawędź ekranu.
+

@@ -287,3 +287,75 @@
 @media(min-width:901px){
   .hero .content{transform:translateY(-26px)}
 }
+
+/* === v3.17 — kliknięcie całej karty karuzeli dodaje produkt do koszyka === */
+.collection-card{cursor:pointer}
+.collection-card button,.collection-card input{cursor:auto}
+
+
+/* === v3.18 — poprawa zakupu w karuzeli === */
+@media(min-width:901px){
+  .collection-card .buy-row{
+    display:grid;
+    grid-template-columns:max-content minmax(0,1fr);
+    gap:.38rem .45rem;
+    align-items:center;
+  }
+  .collection-card .shop-availability{
+    grid-column:1 / -1;
+    margin:0 0 .08rem;
+  }
+  .collection-card .product-qty{
+    grid-column:1;
+  }
+  .collection-card .add-cart-btn{
+    grid-column:2;
+    width:100%;
+    min-width:0;
+    font-size:.62rem;
+    padding:.55rem .38rem;
+    overflow:visible;
+    text-overflow:clip;
+  }
+}
+
+
+/* === v3.19 — wyrównanie i pełna widoczność zakupu w karuzeli === */
+@media(min-width:901px){
+  .collection-card{
+    display:flex;
+    flex-direction:column;
+    cursor:default;
+  }
+  .collection-card .body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .collection-card .shop-actions{
+    margin-top:auto;
+    width:100%;
+  }
+  .collection-card .buy-row{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:.34rem;
+  }
+  .collection-card .shop-availability{
+    margin:0;
+  }
+  .collection-card .product-qty{
+    align-self:flex-start;
+  }
+  .collection-card .add-cart-btn{
+    width:100%;
+    min-width:0;
+    white-space:nowrap;
+    overflow:visible;
+    text-overflow:clip;
+    font-size:.64rem;
+    padding:.58rem .35rem;
+    cursor:pointer;
+  }
+}

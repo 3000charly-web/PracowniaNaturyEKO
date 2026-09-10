@@ -234,3 +234,26 @@ v3.5
 [v3.15]
 - Podniesiono cały blok napisów w głównym banerze wyżej, aby zostawić większy margines od dołu.
 - Nie zmieniano innych sekcji strony.
+
+[v3.16]
+- Dodano nowy produkt do karuzeli akcesoriów: Organizer na herbaty – modułowy.
+- Dodano zdjęcie produktu, cenę 39 zł i status Dostępny.
+- Nie zmieniano innych sekcji strony.
+
+[v3.17]
+- Kliknięcie w dowolne nieinteraktywne miejsce karty produktu w karuzeli dodaje 1 sztukę do wspólnego koszyka i otwiera koszyk.
+- Przyciski ilości i „Dodaj do koszyka” zachowują własne działanie i nie powodują podwójnego dodania.
+- Nie zmieniano innych elementów strony.
+
+[v3.18]
+- Usunięto błędne automatyczne dodawanie produktu po kliknięciu w kartę/zdjęcie/nazwę.
+- Produkt trafia do koszyka wyłącznie po kliknięciu „Dodaj do koszyka”.
+- Poprawiono układ dolnej części kart, aby przycisk „Dodaj do koszyka” był w pełni widoczny przy 5 produktach naraz.
+- Nie zmieniano pozostałych elementów strony.
+
+[v3.19]
+- Wyrównano dolną część wszystkich kart w karuzeli.
+- Ilość i przycisk zakupu nie są już ściskane w jednym wierszu.
+- „Dodaj do koszyka” jest teraz pełnej szerokości i w całości widoczny.
+- Kliknięcie samej karty nadal nie dodaje produktu.
+- Nie zmieniano innych elementów strony.

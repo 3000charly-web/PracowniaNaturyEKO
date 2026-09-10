@@ -214,5 +214,6 @@ window.PRODUCTS = {
   "akcesorium-polka-bezowa": {"nazwa":"Beżowa półka ścienna","cena":"29 zł","dostepnosc":"Dostępny"},
   "akcesorium-wazon-czarny-falisty": {"nazwa":"Czarny wazon falisty","cena":"29 zł","dostepnosc":"Dostępny"},
   "akcesorium-organizer-bialy": {"nazwa":"Pojemnik na jajka","cena":"39 zł","dostepnosc":"Dostępny"},
+  "akcesorium-organizer-na-herbaty": {"nazwa":"Organizer na herbaty – modułowy","cena":"39 zł","dostepnosc":"Dostępny"},
   "akcesorium-organizer-jajka": {"nazwa":"Czarny organizer na jajka","cena":"49 zł","dostepnosc":"Dostępny"},
 };

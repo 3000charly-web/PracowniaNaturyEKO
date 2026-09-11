@@ -269,3 +269,10 @@ v3.5
 - Na telefonie karty karuzeli mają około 74% szerokości widoku, aby były widoczne fragmenty sąsiednich produktów.
 - Uzupełniono ustalone dane: wymiary wazonów, doniczki i półki, pojemność organizerów na jajka oraz 3 przegródki organizera na herbatę.
 - Nie zmieniano cen, dostawy, płatności, zdjęć ani pozostałych sekcji strony.
+
+[v3.26]
+- Poprawiono wyłącznie działanie karuzeli akcesoriów na telefonie.
+- Przepinanie kart w pętli następuje dopiero po zakończeniu płynnego przewinięcia, dzięki czemu poprzednia karta nie pojawia się na moment w połowie ekranu.
+- Zachowano układ mobilny z widocznymi fragmentami sąsiednich kart oraz wszystkie funkcje i treści z v3.25.
+- Nie zmieniano cen, produktów, płatności, dostawy, zdjęć ani pozostałych sekcji strony.
+

@@ -257,3 +257,7 @@ v3.5
 - „Dodaj do koszyka” jest teraz pełnej szerokości i w całości widoczny.
 - Kliknięcie samej karty nadal nie dodaje produktu.
 - Nie zmieniano innych elementów strony.
+
+[v3.20]
+- Wdrożono wyłącznie ustalone zmiany: ceny/nazwa w akcesoriach, nowe produkty zielarskie i herbatki oraz zatwierdzone zdjęcia.
+- Nie zmieniano układu, stylów, mechanizmu koszyka, dostawy, płatności ani innych treści strony.

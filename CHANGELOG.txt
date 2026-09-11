@@ -261,3 +261,11 @@ v3.5
 [v3.20]
 - Wdrożono wyłącznie ustalone zmiany: ceny/nazwa w akcesoriach, nowe produkty zielarskie i herbatki oraz zatwierdzone zdjęcia.
 - Nie zmieniano układu, stylów, mechanizmu koszyka, dostawy, płatności ani innych treści strony.
+
+[v3.25]
+- W karuzeli akcesoriów dodano powiększony podgląd produktu po kliknięciu karty lub zdjęcia; kliknięcie produktu nie dodaje go do koszyka.
+- W podglądzie pokazano duże zdjęcie, nazwę, cenę, dostępność, ustalone wymiary lub pojemność oraz termin wysyłki do 3 dni roboczych.
+- Nad karuzelą dodano wspólną informację: „Przewidywany termin wysyłki: do 3 dni roboczych.”
+- Na telefonie karty karuzeli mają około 74% szerokości widoku, aby były widoczne fragmenty sąsiednich produktów.
+- Uzupełniono ustalone dane: wymiary wazonów, doniczki i półki, pojemność organizerów na jajka oraz 3 przegródki organizera na herbatę.
+- Nie zmieniano cen, dostawy, płatności, zdjęć ani pozostałych sekcji strony.

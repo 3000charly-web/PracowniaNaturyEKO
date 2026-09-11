@@ -98,6 +98,82 @@
     addProduct(button.dataset.addCart||card.dataset.product,input?.value||1);
   });
 
+  // Powiększony podgląd produktu z karuzeli. Kliknięcie karty otwiera szczegóły,
+  // a istniejące przyciski ilości i „Dodaj do koszyka” zachowują swoje działanie.
+  const collectionCarousel=document.querySelector('[data-collection-carousel]');
+  let collectionModal=null;
+  let collectionModalOpener=null;
+  if(collectionCarousel){
+    collectionModal=document.createElement('div');
+    collectionModal.className='collection-detail-modal';
+    collectionModal.setAttribute('aria-hidden','true');
+    collectionModal.innerHTML=`
+      <div class="collection-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="collection-detail-title">
+        <button type="button" class="collection-detail-close" aria-label="Zamknij">×</button>
+        <img class="collection-detail-image" alt="">
+        <div class="collection-detail-content">
+          <h3 id="collection-detail-title"></h3>
+          <p class="collection-detail-price"></p>
+          <p class="collection-detail-availability"><span class="availability-dot"></span><span data-collection-detail-status></span></p>
+          <p class="collection-detail-specific" data-collection-detail-specific></p>
+          <p class="collection-detail-shipping">Przewidywany termin wysyłki: do 3 dni roboczych.</p>
+        </div>
+      </div>`;
+    document.body.append(collectionModal);
+
+    const modalImage=collectionModal.querySelector('.collection-detail-image');
+    const modalTitle=collectionModal.querySelector('#collection-detail-title');
+    const modalPrice=collectionModal.querySelector('.collection-detail-price');
+    const modalAvailability=collectionModal.querySelector('.collection-detail-availability');
+    const modalStatus=collectionModal.querySelector('[data-collection-detail-status]');
+    const modalSpecific=collectionModal.querySelector('[data-collection-detail-specific]');
+    const modalClose=collectionModal.querySelector('.collection-detail-close');
+
+    const openCollectionDetail=card=>{
+      const key=card?.dataset?.product;
+      const item=products[key];
+      if(!item) return;
+      const image=card.querySelector('img');
+      const available=isAvailable(item);
+      collectionModalOpener=card;
+      modalImage.src=image?.currentSrc||image?.src||'';
+      modalImage.alt=image?.alt||item.nazwa||'';
+      modalTitle.textContent=item.nazwa||card.querySelector('h3')?.textContent||'';
+      modalPrice.textContent=item.cena||'';
+      modalStatus.textContent=available?'Dostępny':'Niedostępny';
+      modalAvailability.classList.toggle('is-available',available);
+      modalAvailability.classList.toggle('is-unavailable',!available);
+      const specific=String(item.szczegoly||'').trim();
+      modalSpecific.textContent=specific;
+      modalSpecific.hidden=!specific;
+      collectionModal.classList.add('open');
+      collectionModal.setAttribute('aria-hidden','false');
+      document.body.classList.add('collection-modal-open');
+      collectionCarousel.dispatchEvent(new CustomEvent('collection:pause'));
+      modalClose.focus();
+    };
+
+    const closeCollectionDetail=()=>{
+      if(!collectionModal.classList.contains('open')) return;
+      collectionModal.classList.remove('open');
+      collectionModal.setAttribute('aria-hidden','true');
+      document.body.classList.remove('collection-modal-open');
+      collectionCarousel.dispatchEvent(new CustomEvent('collection:resume'));
+      if(collectionModalOpener && document.contains(collectionModalOpener)) collectionModalOpener.focus?.();
+      collectionModalOpener=null;
+    };
+
+    document.addEventListener('click',e=>{
+      const card=e.target.closest('.collection-card[data-product]');
+      if(!card) return;
+      if(e.target.closest('button,input,a,select,textarea,label,[data-add-cart]')) return;
+      openCollectionDetail(card);
+    });
+    modalClose.addEventListener('click',closeCollectionDetail);
+    collectionModal.addEventListener('click',e=>{if(e.target===collectionModal) closeCollectionDetail()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape' && collectionModal.classList.contains('open')) closeCollectionDetail()});
+  }
+
   // Przycisk koszyka w menu.
   document.querySelectorAll('.menu').forEach(menu=>{
     if(menu.querySelector('.cart-menu-button')) return;

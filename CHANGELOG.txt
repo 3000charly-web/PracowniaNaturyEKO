@@ -276,3 +276,13 @@ v3.5
 - Zachowano układ mobilny z widocznymi fragmentami sąsiednich kart oraz wszystkie funkcje i treści z v3.25.
 - Nie zmieniano cen, produktów, płatności, dostawy, zdjęć ani pozostałych sekcji strony.
 
+[v3.27]
+- Z karuzeli i sklepu usunięto wszystkie masażery oraz czarny wazon ażurowy i czarny wazon falisty.
+- Dodano: Organizer na jajka – piętrowy (39 zł), Organizer na jajka – falisty (39 zł), Wazonik ryflowany (29 zł), Doniczka kotek (29 zł).
+- Przy wszystkich produktach karuzeli dodano pięć nieklikalnych kropek wariantów kolorystycznych: biały, beżowy, brązowy, oliwkowy i czarny.
+- Zachowano wszystkie pozostałe produkty, w tym półkę, oraz dotychczasowe działanie karuzeli, koszyka i płatności.
+- Zaktualizowano osobny Worker płatności tak, aby lista produktów i ceny odpowiadały stronie.
+
+[v3.29]
+- Usunięto Organizer na herbaty – modułowy z karuzeli i sklepu.
+- Nie zmieniano pozostałych produktów, cen, kolorów, układu, koszyka, dostawy ani płatności.

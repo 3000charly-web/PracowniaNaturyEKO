@@ -486,3 +486,16 @@ body.collection-modal-open{overflow:hidden}
   .collection-detail-price{font-size:1.12rem}
   .collection-detail-close{top:.45rem;right:.45rem}
 }
+
+
+/* === v3.27 — warianty kolorystyczne i nowe produkty kolekcji === */
+.collection-card{position:relative}
+.collection-colors{position:absolute;top:.52rem;right:.52rem;z-index:3;display:flex;gap:.26rem;align-items:center;pointer-events:none}
+.collection-color{display:block;width:13px;height:13px;border-radius:50%;border:1px solid rgba(255,255,255,.92);box-shadow:0 1px 4px rgba(30,30,25,.28)}
+.collection-color.is-white{background:#faf9f5;border-color:#a8a8a3}
+.collection-color.is-beige{background:#d7b98d}
+.collection-color.is-brown{background:#9a6038}
+.collection-color.is-olive{background:#6f7d49}
+.collection-color.is-black{background:#171717}
+.collection-card img.collection-product-image.contain{object-fit:contain;padding:.35rem;box-sizing:border-box;background:#f3eee4}
+@media(max-width:600px){.collection-colors{top:.48rem;right:.48rem;gap:.22rem}.collection-color{width:12px;height:12px}}

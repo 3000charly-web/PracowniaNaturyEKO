@@ -286,3 +286,8 @@ v3.5
 [v3.29]
 - Usunięto Organizer na herbaty – modułowy z karuzeli i sklepu.
 - Nie zmieniano pozostałych produktów, cen, kolorów, układu, koszyka, dostawy ani płatności.
+
+[v3.30]
+- Dodatkowe informacje obu zakwasów: świeże, małe partie, około 14 dni fermentacji i możliwe wydłużenie realizacji o kilka dni.
+- Natto: świeże, małe partie i możliwe wydłużenie realizacji o kilka dni; zachowano gramaturę 120 g.
+- Nalewka z zielonego orzecha i syrop z owoców czarnego bzu: sezonowość i dostępność do wyczerpania aktualnych zapasów; zachowano pojemność syropu 300 ml.

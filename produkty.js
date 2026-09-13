@@ -5,7 +5,7 @@ window.PRODUCTS = {
     "sklad": "Buraki, woda, cukier.",
     "sposob": "Dawka: Pij od 50 do 250 ml dziennie dla dorosłych (zacznij od 1 małej łyżeczki, aby przyzwyczaić brzuch). Rano na czczo lub przed posiłkiem, jeśli nie masz bólu żołądka.",
     "zastosowanie": "Produkt spożywczy do codziennego urozmaicenia diety.",
-    "dodatkowe": "Dostępność najlepiej potwierdzić bezpośrednio.",
+    "dodatkowe": "Zakwas przygotowujemy na świeżo, w małych partiach. Proces fermentacji trwa około 14 dni, dlatego w przypadku wyczerpania aktualnej partii czas realizacji zamówienia może wydłużyć się o kilka dni.",
     "cena": "1 litr – 25 zł",
     "dostepnosc": "Dostępny"
   },
@@ -15,7 +15,7 @@ window.PRODUCTS = {
     "sklad": "Ziarna soi i kultura fermentacyjna użyta do przygotowania natto.",
     "sposob": "Może być spożywane samodzielnie lub jako dodatek do potraw.",
     "zastosowanie": "Natto to tradycyjny japoński produkt z fermentowanej soi, który znajduje główne zastosowanie w zdrowiu układu krążenia, wzmocnieniu kości oraz kuchni.",
-    "dodatkowe": "Produkt przygotowywany w niewielkich partiach. Opakowanie 120 g. Dostępność najlepiej potwierdzić bezpośrednio.",
+    "dodatkowe": "Natto przygotowujemy na świeżo, w małych partiach. W przypadku wyczerpania aktualnej partii czas realizacji zamówienia może wydłużyć się o kilka dni. Opakowanie 120 g.",
     "cena": "120 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
@@ -35,7 +35,7 @@ window.PRODUCTS = {
     "sklad": "Serwatka kozia, glistnik.",
     "sposob": "1 łyżka 2–3 razy dziennie, zazwyczaj 20–40 minut przed posiłkiem.",
     "zastosowanie": "Enzymy Bołotowa, znane również jako kwas lub zakwas z glistnikiem, to tradycyjnie przygotowywany ferment na bazie serwatki i glistnika (jaskółczego ziela).",
-    "dodatkowe": "Dostępność zależy od czasu fermentacji i aktualnej partii.",
+    "dodatkowe": "Zakwas przygotowujemy na świeżo, w małych partiach. Proces fermentacji trwa około 14 dni, dlatego w przypadku wyczerpania aktualnej partii czas realizacji zamówienia może wydłużyć się o kilka dni.",
     "cena": "1 litr – 45 zł",
     "dostepnosc": "Dostępny"
   },
@@ -45,7 +45,7 @@ window.PRODUCTS = {
     "sklad": "Młode zielone orzechy włoskie oraz składniki użyte w aktualnej recepturze.",
     "sposob": "Spożywać w niewielkich ilościach, samodzielnie lub po rozcieńczeniu z wodą. Produkt przeznaczony dla osób dorosłych.",
     "zastosowanie": "Nalewka z zielonych orzechów włoskich (orzechówka) to tradycyjny środek stosowany głównie na problemy z układem pokarmowym, niestrawność oraz do zwalczania pasożytów jelitowych.",
-    "dodatkowe": "Produkt dostępny w ograniczonych partiach.",
+    "dodatkowe": "Nalewka z zielonego orzecha jest produktem sezonowym i jest dostępna do wyczerpania aktualnych zapasów.",
     "cena": "200 ml – 50 zł",
     "dostepnosc": "Dostępny"
   },
@@ -190,7 +190,7 @@ window.PRODUCTS = {
     "sklad": "Czarny bez, cukier, woda, goździki, cynamon, cytryna.",
     "sposob": "Stosować zgodnie z informacją przekazywaną do produktu.",
     "zastosowanie": "Produkt spożywczy.",
-    "dodatkowe": "Pojemność 300 ml.",
+    "dodatkowe": "Syrop z owoców czarnego bzu jest produktem sezonowym i jest dostępny do wyczerpania aktualnych zapasów. Pojemność 300 ml.",
     "cena": "300 ml – 20 zł",
     "dostepnosc": "Dostępny"
   },

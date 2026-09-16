@@ -33,8 +33,7 @@ window.PRODUCTS = {
     "nazwa": "Zakwas Enzymy Bołotowa",
     "opis": "Tradycyjnie przygotowywany ferment na koziej serwatce, dojrzewający w małych partiach.",
     "sklad": "Serwatka kozia, glistnik.",
-    "sposob": "1 łyżka 2–3 razy dziennie, zazwyczaj 20–40 minut przed posiłkiem.",
-    "zastosowanie": "Enzymy Bołotowa, znane również jako kwas lub zakwas z glistnikiem, to tradycyjnie przygotowywany ferment na bazie serwatki i glistnika (jaskółczego ziela).",
+    "zastosowanie": "Enzymy Bołotowa, znane również jako kwas lub zakwas z glistnikiem, to tradycyjnie przygotowywany ferment na bazie serwatki i glistnika (jaskółczego ziela). Do użytku zewnętrznego.",
     "dodatkowe": "Zakwas przygotowujemy na świeżo, w małych partiach. Proces fermentacji trwa około 14 dni, dlatego w przypadku wyczerpania aktualnej partii czas realizacji zamówienia może wydłużyć się o kilka dni.",
     "cena": "1 litr – 45 zł",
     "dostepnosc": "Dostępny"

@@ -2,21 +2,9 @@
   const BACKEND='https://pracownia-natury-platnosci.3000charly.workers.dev';
   const CART_KEY='pracownia_natury_cart_v1';
   const PENDING_KEY='pracownia_natury_pending_stripe_v1';
-  const PAID_PENDING_EMAIL_KEY='pracownia_natury_paid_pending_email_v1';
-  const EMAIL_SENT_KEY='pracownia_natury_paid_email_sent_v1';
 
   const getCart=()=>{try{return JSON.parse(localStorage.getItem(CART_KEY)||'[]')}catch{return []}};
   const getPending=()=>{try{return JSON.parse(localStorage.getItem(PENDING_KEY)||'null')}catch{return null}};
-  const getPaidPendingEmail=()=>{try{return JSON.parse(localStorage.getItem(PAID_PENDING_EMAIL_KEY)||'null')}catch{return null}};
-  const getSentOrderIds=()=>{try{return JSON.parse(localStorage.getItem(EMAIL_SENT_KEY)||'[]')}catch{return []}};
-  const markEmailSent=orderId=>{
-    if(!orderId) return;
-    const ids=getSentOrderIds();
-    if(!ids.includes(orderId)) ids.push(orderId);
-    localStorage.setItem(EMAIL_SENT_KEY,JSON.stringify(ids.slice(-30)));
-  };
-  const wasEmailSent=orderId=>!!orderId && getSentOrderIds().includes(orderId);
-  const money=value=>`${Number(value||0).toFixed(2).replace('.',',')} zł`;
 
   function formDataObject(){
     const form=document.querySelector('[data-checkout-form]');
@@ -50,68 +38,6 @@
     const note=document.querySelector('[data-summary-content] > .checkout-note:not(.order-send-status)');
     if(note){
       note.textContent='Po kliknięciu przejdziesz do bezpiecznej płatności Stripe. Zamówienie zostanie oznaczone numerem widocznym także w Stripe.';
-    }
-  }
-
-  async function sendOrderEmail(pending, paymentText, subjectPrefix){
-    const c=pending.customer||{};
-    const cart=Array.isArray(pending.cart)?pending.cart:[];
-    const ship=pending.ship||{};
-    const email=(window.CONTACT&&window.CONTACT.email)||'aga_bialk@int.pl';
-    const endpoint=`https://formsubmit.co/ajax/${email}`;
-    const subtotal=cart.reduce((sum,x)=>sum+(Number(x.price)||0)*(Number(x.qty)||0),0);
-    const delivery=/bezpłat/i.test(ship.cena||'') ? 0 : (Number(String(ship.cena||'').replace(',','.').match(/(\d+(?:\.\d+)?)/)?.[1])||0);
-    const customerAddress=`${c.street||''}, ${c.postal||''} ${c.city||''}`.trim();
-    const deliveryAddress=c.paczkomat
-      ? `Paczkomat: ${c.paczkomat}`
-      : (/Odbiór osobisty/i.test(ship.nazwa||'') ? 'Odbiór osobisty' : customerAddress);
-
-    const payload={
-      _subject:`${subjectPrefix} — ${pending.orderId}`,
-      _template:'table',
-      _replyto:c.email||'',
-      order_id:pending.orderId,
-      name:c.name||'',
-      email:c.email||'',
-      phone:c.phone||'',
-      products:cart.map(x=>`- ${x.name} x ${x.qty} = ${money((Number(x.price)||0)*(Number(x.qty)||0))}`).join('\n'),
-      customer_address:customerAddress,
-      delivery_method:ship.nazwa ? `${ship.nazwa} — ${ship.cena||''}` : 'do ustalenia',
-      delivery_address:deliveryAddress,
-      payment:paymentText,
-      products_total:money(subtotal),
-      delivery_cost:money(delivery),
-      order_total:money(subtotal+delivery),
-      notes:c.notes||'brak'
-    };
-
-    const response=await fetch(endpoint,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    });
-
-    const result=await response.json().catch(()=>({}));
-    if(!response.ok || result.success===false){
-      throw new Error(result.message||'Nie udało się wysłać wiadomości o zamówieniu.');
-    }
-  }
-
-
-  async function retryPaidOrderEmail(){
-    const pending=getPaidPendingEmail();
-    if(!pending || !pending.orderId) return;
-    if(wasEmailSent(pending.orderId)){
-      localStorage.removeItem(PAID_PENDING_EMAIL_KEY);
-      return;
-    }
-    try{
-      await sendOrderEmail(pending,'Stripe — OPŁACONO','Płatność potwierdzona');
-      markEmailSent(pending.orderId);
-      localStorage.removeItem(PAID_PENDING_EMAIL_KEY);
-      localStorage.removeItem(PENDING_KEY);
-    }catch(error){
-      console.error('Ponowna próba wysłania maila o opłaconym zamówieniu nie powiodła się:',error);
     }
   }
 
@@ -225,23 +151,7 @@
       const pending=getPending();
       localStorage.setItem(CART_KEY,'[]');
 
-      if(pending){
-        const orderId=result.order_id || pending.orderId || '';
-        if(!wasEmailSent(orderId)){
-          localStorage.setItem(PAID_PENDING_EMAIL_KEY,JSON.stringify({...pending,orderId}));
-          try{
-            await sendOrderEmail({...pending,orderId},'Stripe — OPŁACONO','Płatność potwierdzona');
-            markEmailSent(orderId);
-            localStorage.removeItem(PAID_PENDING_EMAIL_KEY);
-            localStorage.removeItem(PENDING_KEY);
-          }catch(mailError){
-            console.error('Nie udało się wysłać potwierdzenia płatności. Zamówienie zachowano do ponownej próby:',mailError);
-          }
-        }else{
-          localStorage.removeItem(PAID_PENDING_EMAIL_KEY);
-          localStorage.removeItem(PENDING_KEY);
-        }
-      }
+      if(pending) localStorage.removeItem(PENDING_KEY);
 
       history.replaceState({},'',window.location.pathname+window.location.hash);
       showPaidMessage(result.order_id || pending?.orderId || '');
@@ -254,7 +164,6 @@
 
   function install(){
     updatePaymentUi();
-    retryPaidOrderEmail();
 
     const goDetails=document.querySelector('[data-go-details]');
     if(goDetails) goDetails.addEventListener('click',()=>setTimeout(updatePaymentUi,0));

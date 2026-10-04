@@ -64,7 +64,7 @@ window.PRODUCTS = {
     "sklad": "Kwiat wrotyczu, tłuszcz wołowy",
     "sposob": "Nanieść niewielką ilość na nieuszkodzoną skórę i delikatnie wmasować. Tylko do użytku zewnętrznego.",
     "zastosowanie": "Maść z wrotyczu służy głównie do zewnętrznej pielęgnacji skóry problematycznej, łagodzenia stanów zapalnych oraz zwalczania pasożytów skórnych. Pomaga w walce z trądzikiem, opryszczką, łuszczycą oraz łagodzi świąd po ukąszeniach owadów.",
-    "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową.",
+    "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "100 ml – 30 zł",
     "dostepnosc": "Dostępny"
   },
@@ -74,7 +74,7 @@ window.PRODUCTS = {
     "sklad": "Kwiat wrotyczu, tłuszcz gęsi",
     "sposob": "Nanieść niewielką ilość na nieuszkodzoną skórę i delikatnie wmasować. Tylko do użytku zewnętrznego.",
     "zastosowanie": "Maść z wrotyczu służy głównie do zewnętrznej pielęgnacji skóry problematycznej, łagodzenia stanów zapalnych oraz zwalczania pasożytów skórnych. Pomaga w walce z trądzikiem, opryszczką, łuszczycą oraz łagodzi świąd po ukąszeniach owadów.",
-    "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową.",
+    "dodatkowe": "Wrotycz od wieków jest ceniony za swoje właściwości pielęgnacyjne i ochronne, po ukąszeniach komarów i innych owadów, przy swędzeniu i podrażnieniach skóry, do pielęgnacji skóry skłonnej do egzemy i atopowego zapalenia skóry (AZS), do pielęgnacji miejsc narażonych na kontakt z kleszczami i owadami, do masażu bolących mięśni i stawów. Przeciwwskazania: nie stosować u osób uczulonych na rośliny z rodziny astrowatych, nie nakładać na otwarte rany ani błony śluzowe, nie stosować w okresie ciąży i karmienia piersią bez konsultacji z lekarzem, nie stosować u małych dzieci bez konsultacji ze specjalistą, przed pierwszym użyciem wykonać próbę uczuleniową. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "100 ml – 45 zł",
     "dostepnosc": "Dostępny"
   },
@@ -84,7 +84,7 @@ window.PRODUCTS = {
     "sklad": "Olej kokosowy, wosk pszczeli, witamina E, skrobia, olejek różany i wodorowęglan sodu.",
     "sposob": "Nanieść niewielką ilość na czystą i suchą skórę.",
     "zastosowanie": "Do codziennej pielęgnacji i zapewnienia uczucia świeżości.",
-    "dodatkowe": "Nie stosować na podrażnioną skórę.",
+    "dodatkowe": "Nie stosować na podrażnioną skórę. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "50 ml – 35 zł",
     "dostepnosc": "Dostępny"
   },
@@ -94,7 +94,7 @@ window.PRODUCTS = {
     "sklad": "Olej kokosowy, glinka biała, wodorowęglan sodu, ksylitol, witamina E, mięta i olejek z mięty pieprzowej.",
     "sposob": "Niewielką ilość nanieść na szczoteczkę i używać jak zwykłej pasty.",
     "zastosowanie": "Do codziennej higieny jamy ustnej.",
-    "dodatkowe": "Nie połykać. Przechowywać szczelnie zamknięte.",
+    "dodatkowe": "Nie połykać. Przechowywać szczelnie zamknięte. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "65 ml – 35 zł",
     "dostepnosc": "Dostępny"
   },
@@ -136,7 +136,7 @@ window.PRODUCTS = {
     "sklad": "Wyciąg z wrotyczu, wyciąg z glistnika (jaskółcze ziele) oraz naturalna baza tłuszczowa.",
     "sposob": "Niewielką ilość mazidełka nanieść na wybrane miejsce i delikatnie wmasować. Wyłącznie do użytku zewnętrznego.",
     "zastosowanie": "Tradycyjnie stosowane do pielęgnacji zrogowaciałego i szorstkiego naskórka, skóry po ukąszeniach owadów, przy swędzeniu i podrażnieniach oraz skóry skłonnej do drobnych niedoskonałości.",
-    "dodatkowe": "Produkt ręcznie wykonywany, gęsty i wydajny. Nie stosować na otwarte rany ani błony śluzowe. Przed pierwszym użyciem wykonać próbę na małym fragmencie skóry. Przechowywać w chłodnym i zacienionym miejscu.",
+    "dodatkowe": "Produkt ręcznie wykonywany, gęsty i wydajny. Nie stosować na otwarte rany ani błony śluzowe. Przed pierwszym użyciem wykonać próbę na małym fragmencie skóry. Przechowywać w chłodnym i zacienionym miejscu. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "100 ml – 30 zł",
     "dostepnosc": "Dostępny"
   },
@@ -148,8 +148,23 @@ window.PRODUCTS = {
     "sklad": "Żywokost, chilli, DMSO, witamina E, olej rycynowy, kamfora, gliceryna, mentol oraz baza tłuszczowa.",
     "sposob": "Niewielką ilość nanieść na skórę i delikatnie wmasować. Stosować wyłącznie zewnętrznie.",
     "zastosowanie": "Do masażu i pielęgnacji skóry w okolicach mięśni, stawów, pleców, kolan, barków oraz innych miejsc narażonych na przeciążenie. Połączenie chilli, kamfory i mentolu daje charakterystyczne odczucie rozgrzewania i chłodzenia, szczególnie przydatne podczas masażu po wysiłku fizycznym. Żywokost jest tradycyjnie wykorzystywany w preparatach do pielęgnacji i masażu skóry. Olej rycynowy, gliceryna i witamina E wspomagają jej natłuszczenie, nawilżenie i pielęgnację.",
-    "dodatkowe": "100 ml. Ze względu na obecność DMSO, chilli, kamfory i mentolu nie stosować na uszkodzoną lub podrażnioną skórę, okolice oczu i błony śluzowe. Po zastosowaniu umyć ręce. Przed pierwszym użyciem wykonać próbę na niewielkim fragmencie skóry.",
+    "dodatkowe": "100 ml. Ze względu na obecność DMSO, chilli, kamfory i mentolu nie stosować na uszkodzoną lub podrażnioną skórę, okolice oczu i błony śluzowe. Po zastosowaniu umyć ręce. Przed pierwszym użyciem wykonać próbę na niewielkim fragmencie skóry. Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
     "cena": "100 ml – 39 zł",
+    "dostepnosc": "Dostępny"
+  },
+
+  "olejek-cialo-wlosy": {
+    "nazwa": "Olejek do ciała i włosów",
+    "opis": "Naturalny olejek do codziennej pielęgnacji ciała i włosów. Połączenie oleju migdałowego i kokosowego z nagietkiem oraz aksamitką tworzy prostą kompozycję pielęgnacyjną o przyjemnym zapachu. Olejek można stosować zarówno na skórę, jak i na włosy.",
+    "sklad": "Olej migdałowy, olej kokosowy, nagietek, aksamitka, olejek zapachowy.",
+    "sposob": "Niewielką ilość olejku nanieść na skórę i delikatnie wmasować. Na włosy stosować niewielką ilość na długości lub końcówki.",
+    "zastosowanie": "Do codziennej pielęgnacji skóry ciała i włosów.",
+    "dodatkowe": "Produkt do użytku zewnętrznego. Przechowywać w suchym i zacienionym miejscu. Produkt kolekcjonerski.",
+    "cena": "100 ml – 35 zł • 150 ml – 49 zł",
+    "warianty": [
+      {"key": "olejek-cialo-wlosy-100", "label": "100 ml", "price": 35},
+      {"key": "olejek-cialo-wlosy-150", "label": "150 ml", "price": 49}
+    ],
     "dostepnosc": "Dostępny"
   },
 

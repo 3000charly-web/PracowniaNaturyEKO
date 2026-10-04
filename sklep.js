@@ -12,17 +12,30 @@
   const shipping=Array.isArray(window.SHIPPING)?window.SHIPPING:[];
   const isAvailable=item=>/dostępny/i.test(item?.dostepnosc||'') && !/niedostęp|potwierd|zamówienie|sezon/i.test(item?.dostepnosc||'');
 
-  function addProduct(key,qty=1){
+  function addProduct(key,qty=1,variantKey=''){
     const item=products[key];
     if(!item) return;
     if(!isAvailable(item)){alert('Ten produkt jest obecnie niedostępny do zakupu online.');return;}
-    const price=parsePrice(item.cena);
-    if(price===null){alert('Cena tego produktu nie została jeszcze uzupełniona.');return;}
+
+    let cartKey=key;
+    let cartName=item.nazwa||key;
+    let price=parsePrice(item.cena);
+
+    const variants=Array.isArray(item.warianty) ? item.warianty : [];
+    if(variants.length){
+      const variant=variants.find(v=>v.key===variantKey) || variants[0];
+      if(!variant){alert('Wybierz pojemność produktu.');return;}
+      cartKey=variant.key;
+      cartName=`${item.nazwa||key} — ${variant.label||''}`.trim();
+      price=Number(variant.price);
+    }
+
+    if(price===null || !Number.isFinite(price)){alert('Cena tego produktu nie została jeszcze uzupełniona.');return;}
     qty=Math.max(1,Math.min(99,Number(qty)||1));
     const cart=getCart();
-    const existing=cart.find(x=>x.key===key);
+    const existing=cart.find(x=>x.key===cartKey);
     if(existing) existing.qty=Math.min(99,existing.qty+qty);
-    else cart.push({key,name:item.nazwa||key,price,qty});
+    else cart.push({key:cartKey,name:cartName,price,qty});
     saveCart(cart);
     openCart();
   }
@@ -52,11 +65,30 @@
     card.querySelectorAll('.actions').forEach(x=>x.remove());
     const actions=document.createElement('div');
     actions.className='actions shop-actions';
-    const price=parsePrice(item.cena);
+    const variants=Array.isArray(item.warianty) ? item.warianty : [];
+    const price=variants.length ? Number(variants[0].price) : parsePrice(item.cena);
     const available=isAvailable(item);
     const status=document.createElement('div');
     status.className=`shop-availability ${available?'is-available':'is-unavailable'}`;
     status.innerHTML=`<span class="availability-dot"></span>${available?'Dostępny':'Niedostępny'}`;
+    let variantSelect=null;
+    if(variants.length){
+      const variantRow=document.createElement('div');
+      variantRow.className='product-variant-row';
+      const label=document.createElement('label');
+      label.textContent='Pojemność';
+      variantSelect=document.createElement('select');
+      variantSelect.className='product-variant-select';
+      variantSelect.setAttribute('aria-label','Pojemność produktu');
+      variants.forEach(v=>{
+        const option=document.createElement('option');
+        option.value=v.key;
+        option.textContent=`${v.label} — ${money(v.price)}`;
+        variantSelect.append(option);
+      });
+      variantRow.append(label,variantSelect);
+      actions.append(variantRow);
+    }
     const buyRow=document.createElement('div');
     buyRow.className='buy-row';
     buyRow.append(status);
@@ -78,7 +110,7 @@
     }else{
       button.textContent='🛒 Dodaj do koszyka';
       if(!card.classList.contains('collection-card')){
-        button.addEventListener('click',()=>addProduct(key,input.value));
+        button.addEventListener('click',()=>addProduct(key,input.value,variantSelect?.value||''));
       }
     }
     buyRow.append(qty,button); actions.append(buyRow); body.append(actions);
@@ -95,7 +127,7 @@
     const card=button.closest('.collection-card[data-product]');
     if(!card) return;
     const input=card.querySelector('.product-qty input');
-    addProduct(button.dataset.addCart||card.dataset.product,input?.value||1);
+    addProduct(button.dataset.addCart||card.dataset.product,input?.value||1,card.querySelector('.product-variant-select')?.value||'');
   });
 
   // Powiększony podgląd produktu z karuzeli. Kliknięcie karty otwiera szczegóły,

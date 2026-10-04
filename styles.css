@@ -499,3 +499,8 @@ body.collection-modal-open{overflow:hidden}
 .collection-color.is-black{background:#171717}
 .collection-card img.collection-product-image.contain{object-fit:contain;padding:.35rem;box-sizing:border-box;background:#f3eee4}
 @media(max-width:600px){.collection-colors{top:.48rem;right:.48rem;gap:.22rem}.collection-color{width:12px;height:12px}}
+
+
+.product-variant-row{display:flex;align-items:center;gap:.55rem;margin:.1rem 0 .65rem}
+.product-variant-row label{font:700 .76rem Arial,sans-serif;color:var(--green);white-space:nowrap}
+.product-variant-select{flex:1;min-width:0;padding:.62rem .75rem;border:1px solid #cfc4b3;border-radius:12px;background:#fff;color:var(--ink);font:700 .78rem Arial,sans-serif}

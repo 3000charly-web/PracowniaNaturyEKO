@@ -213,6 +213,16 @@ window.PRODUCTS = {
     "cena": "50 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
+  "herbatka-zdrowa-watroba": {
+    "nazwa": "Herbatka Zdrowa Wątroba",
+    "opis": "Naturalna mieszanka ziołowa o tradycyjnym, ziołowym składzie, przygotowana z myślą o codziennym wsparciu organizmu.",
+    "sklad": "Kocanka, ziele rzepiku, ziele krwawnika, korzeń mniszka, kwiat rumianku, ziele szanty.",
+    "sposob": "1–2 łyżeczki mieszanki zalać szklanką gorącej wody, parzyć pod przykryciem około 10–15 minut, następnie przecedzić.",
+    "zastosowanie": "Mieszanka ziołowa przeznaczona do przygotowania naparu.",
+    "dodatkowe": "Opakowanie 100 g. Produkt naturalny, bez zbędnych dodatków. Przechowywać w suchym i zacienionym miejscu, w szczelnie zamkniętym opakowaniu.",
+    "cena": "22 zł / opakowanie",
+    "dostepnosc": "Dostępny"
+  },
   "herbata-aksamitka": {
     "nazwa": "Herbata z aksamitki",
     "opis": "Herbatka przygotowana z całych, suszonych kwiatów aksamitki, zbieranych i suszonych w niewielkich partiach z dbałością o zachowanie ich naturalnego koloru, aromatu i wyglądu. Napar ma charakterystyczny, lekko ziołowo-kwiatowy smak.",

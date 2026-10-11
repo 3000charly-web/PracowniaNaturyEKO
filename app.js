@@ -125,3 +125,83 @@ window.addEventListener('load',()=>{
   script.src='stripe-payments.js';
   document.body.append(script);
 });
+
+// === Promocja: gratis organizer na jajka przy zakupach za min. 200 zł (v3.39) ===
+// Samo wyświetlanie informacji – bez wpływu na koszyk, Stripe i Worker (prezent dodawany ręcznie).
+// ABY WYŁĄCZYĆ PROMOCJĘ: zmień PROMO_GIFT_ENABLED na false.
+(()=>{
+  const PROMO_GIFT_ENABLED=true;
+  if(!PROMO_GIFT_ENABLED) return;
+
+  const PHOTO='img/kolekcja/organizer-jajka-1.png';
+  const PRODUCT_KEY='akcesorium-organizer-bialy'; // Organizer na jajka nr 1
+  const STORAGE_KEY='promo_gift_200_closed';
+
+  const style=document.createElement('style');
+  style.textContent=`
+    .promo-gift{position:fixed;right:24px;bottom:24px;z-index:90;width:270px;background:#faf6ec;border:3px solid #244d2c;border-radius:18px;overflow:hidden;font:700 1.15rem/1.3 Arial,sans-serif;color:#244d2c;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+    .promo-gift img{display:block;width:100%;height:170px;object-fit:cover}
+    .promo-gift .promo-gift-cap{padding:.8rem 1rem 1rem;text-align:center}
+    .promo-gift .promo-gift-close{position:absolute;top:8px;right:8px;width:34px;height:34px;border:0;border-radius:50%;background:rgba(250,246,236,.92);font-size:1.5rem;line-height:1;color:#244d2c;cursor:pointer}
+    body.collection-modal-open .promo-gift{display:none}
+    .promo-gift-tag{position:absolute;z-index:5;box-sizing:border-box;background:#faf6ec;border:2px solid #244d2c;border-radius:10px;padding:.35rem;text-align:center;font:700 .8rem/1.2 Arial,sans-serif;color:#244d2c;pointer-events:none}
+    .promo-gift-tag .long{display:none}
+    @media(max-width:700px){
+      .promo-gift{left:10px;right:10px;bottom:10px;width:auto;display:flex;align-items:center;gap:.8rem;border-width:2px;border-radius:16px;padding:.5rem .8rem .5rem .5rem;font-size:1rem}
+      .promo-gift img{width:92px;height:76px;flex:none;border-radius:10px}
+      .promo-gift .promo-gift-cap{padding:0;text-align:left}
+      .promo-gift .promo-gift-close{position:static;margin-left:auto;flex:none;width:auto;height:auto;background:none;font-size:1.8rem}
+      .promo-gift-tag{border-radius:12px;padding:.5rem;font-size:.85rem}
+      .promo-gift-tag .short{display:none}
+      .promo-gift-tag .long{display:inline}
+    }`;
+  document.head.append(style);
+
+  const init=()=>{
+    // Stała plakietka na każdej podstronie (do zamknięcia na czas wizyty).
+    let closed=false;
+    try{ closed=sessionStorage.getItem(STORAGE_KEY)==='1'; }catch(e){}
+    if(!closed){
+      const box=document.createElement('aside');
+      box.className='promo-gift';
+      box.setAttribute('aria-label','Promocja: gratis organizer na jajka');
+      box.innerHTML=`<img src="${PHOTO}" alt="Organizer na jajka – gratis" loading="lazy"><div class="promo-gift-cap">🎁 Przy zakupach za min. 200 zł – <u>gratis organizer</u></div><button type="button" class="promo-gift-close" aria-label="Zamknij">×</button>`;
+      box.querySelector('.promo-gift-close').addEventListener('click',()=>{
+        box.remove();
+        try{ sessionStorage.setItem(STORAGE_KEY,'1'); }catch(e){}
+      });
+      document.body.append(box);
+    }
+
+    // Etykieta na zdjęciu organizera nr 1 w karuzeli (strona główna).
+    const track=document.querySelector('[data-carousel-track]');
+    if(!track) return;
+    const place=card=>{
+      const img=card.querySelector(':scope > img');
+      const tag=card.querySelector(':scope > .promo-gift-tag');
+      if(!img||!tag) return;
+      tag.style.left=(img.offsetLeft+8)+'px';
+      tag.style.width=(img.offsetWidth-16)+'px';
+      tag.style.top=(img.offsetTop+img.offsetHeight-tag.offsetHeight-8)+'px';
+    };
+    const apply=()=>{
+      track.querySelectorAll(`.collection-card[data-product="${PRODUCT_KEY}"]`).forEach(card=>{
+        if(getComputedStyle(card).position==='static') card.style.position='relative';
+        if(!card.querySelector(':scope > .promo-gift-tag')){
+          const tag=document.createElement('div');
+          tag.className='promo-gift-tag';
+          tag.innerHTML='🎁 <span class="short">GRATIS od 200 zł</span><span class="long">GRATIS przy zakupach<br>od 200 zł</span>';
+          card.append(tag);
+          const img=card.querySelector(':scope > img');
+          if(img && !img.complete) img.addEventListener('load',()=>place(card),{once:true});
+        }
+        place(card);
+      });
+    };
+    apply();
+    new MutationObserver(apply).observe(track,{childList:true});
+    window.addEventListener('resize',apply);
+    window.addEventListener('load',apply);
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();

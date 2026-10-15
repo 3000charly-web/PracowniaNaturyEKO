@@ -130,7 +130,7 @@ window.addEventListener('load',()=>{
 // Samo wyświetlanie informacji – bez wpływu na koszyk, Stripe i Worker (prezent dodawany ręcznie).
 // ABY WYŁĄCZYĆ PROMOCJĘ: zmień PROMO_GIFT_ENABLED na false.
 (()=>{
-  const PROMO_GIFT_ENABLED=true;
+  const PROMO_GIFT_ENABLED=false;
   if(!PROMO_GIFT_ENABLED) return;
 
   const PHOTO='img/kolekcja/organizer-jajka-1.png';

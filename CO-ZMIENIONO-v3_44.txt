@@ -1,0 +1,17 @@
+Pracownia Natury EKO — v3.44 (piksel Meta + zgoda na cookies), 31.10.2026
+
+WGRAĆ (zastąpić stare, dodać nowy):
+  NOWY: meta-pixel.js
+  ZMIENIONE: index.html, fermenty.html, herbatki.html, kosmetyki.html, nalewki.html,
+             syropy.html, ziola.html, zakwas-bolotowa.html, styles.css, CHANGELOG.txt
+Pozostałych plików NIE ruszać.
+
+CO ZMIENIONO:
+1. Na dole strony pojawia się baner „Akceptuję / Odrzucam” (tylko do pierwszego wyboru).
+2. Piksel Meta (numer 1484309313587327) włącza się dopiero po „Akceptuję”.
+3. Zdarzenia: wejście na stronę, oglądanie zakwasu, dodanie do koszyka, przejście do płatności, zakup.
+4. W „Informacji prawnej” (strona główna) nowy akapit o cookies i link „zmień ustawienia cookies”.
+Koszyk, płatności, ceny i Worker bez zmian.
+
+PO WGRANIU: w Menedżerze zdarzeń Meta, zakładka „Testowanie zdarzeń”, wpisać adres strony, otworzyć ją,
+kliknąć „Akceptuję” i sprawdzić, czy widać zdarzenia PageView / ViewContent / AddToCart.

@@ -506,3 +506,11 @@ body.collection-modal-open{overflow:hidden}
 .product-variant-select{flex:1;min-width:0;padding:.62rem .75rem;border:1px solid #cfc4b3;border-radius:12px;background:#fff;color:var(--ink);font:700 .78rem Arial,sans-serif}
 /* v3.42: ikonki YouTube / Facebook w przyciskach */
 .btn .social-ico{width:1.35em;height:1.35em;margin-right:.5em;flex:0 0 auto}
+
+/* v3.44 — baner zgody na cookies (piksel Meta) */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:1300;background:var(--cream);border-top:1px solid #ddd3c2;box-shadow:0 -8px 28px rgba(0,0,0,.14);padding:1rem 4vw;display:flex;gap:1rem 1.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cookie-banner p{margin:0;flex:1 1 320px;font:400 .9rem/1.5 Arial,sans-serif;color:var(--ink)}
+.cookie-banner-buttons{display:flex;gap:.6rem;flex-wrap:wrap}
+.cookie-banner .btn{cursor:pointer;background:transparent;color:var(--green)}
+.cookie-banner .btn.primary{background:var(--green);color:#fff}
+@media(max-width:600px){.cookie-banner{padding:.9rem 5vw}.cookie-banner-buttons{width:100%}.cookie-banner .btn{flex:1}}

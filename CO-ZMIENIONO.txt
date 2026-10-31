@@ -1,0 +1,26 @@
+Pracownia Natury EKO — v3.41 (SEO), 31.10.2026
+
+PLIKI W PACZCE (wkleić do folderu repozytorium, zastąpić stare):
+  index.html, fermenty.html, herbatki.html, kosmetyki.html, nalewki.html,
+  ziola.html, syropy.html, INSTRUKCJA.html, sitemap.xml, CHANGELOG.txt
+NOWY PLIK:
+  robots.txt
+Pozostałych plików (js, css, zdjęć) NIE ruszać — nie zmieniały się.
+
+CO ZMIENIONO:
+1. Tytuł strony (tekst na karcie przeglądarki i niebieski link w Google) — każda strona ma własny, z nazwami produktów.
+2. Opis pod linkiem w Google (meta description) — każda strona ma własny opis zamiast jednego wspólnego.
+3. Podstrony kategorii — pod nagłówkiem dopisane 1–2 zdania o produktach, przed dotychczasowym „Wybierz wyrób…”.
+4. Podgląd linku na Facebooku/Messengerze — tytuł, opis i zdjęcie (Open Graph).
+5. Adres kanoniczny — Google wie, że właściwy adres to https://www.pracownianaturyeko.pl/...
+6. Strona główna — ukryte dane firmy dla Google (Pracownia Natury EKO, Lasocin, telefon, e-mail, godziny Pn–Pt 9–18, Facebook).
+7. Zdjęcia niżej na stronie ładują się dopiero przy przewijaniu — szybciej na telefonie.
+8. INSTRUKCJA.html — ukryta przed Google (noindex).
+9. sitemap.xml — dopisana data aktualizacji. robots.txt — wskazuje Google mapę witryny.
+
+NIE ZMIENIONO: wyglądu, produktów, cen, opisów produktów, koszyka, płatności, Workera.
+
+PO WGRANIU:
+- Google Search Console: dodać stronę, wysłać sitemap.xml, poprosić o ponowne zindeksowanie strony głównej.
+- Nowe opisy w Google pojawią się po kilku dniach do kilku tygodni.
+- Podgląd linku na FB sprawdzisz tu: https://developers.facebook.com/tools/debug/

@@ -504,3 +504,5 @@ body.collection-modal-open{overflow:hidden}
 .product-variant-row{display:flex;align-items:center;gap:.55rem;margin:.1rem 0 .65rem}
 .product-variant-row label{font:700 .76rem Arial,sans-serif;color:var(--green);white-space:nowrap}
 .product-variant-select{flex:1;min-width:0;padding:.62rem .75rem;border:1px solid #cfc4b3;border-radius:12px;background:#fff;color:var(--ink);font:700 .78rem Arial,sans-serif}
+/* v3.42: ikonki YouTube / Facebook w przyciskach */
+.btn .social-ico{width:1.35em;height:1.35em;margin-right:.5em;flex:0 0 auto}

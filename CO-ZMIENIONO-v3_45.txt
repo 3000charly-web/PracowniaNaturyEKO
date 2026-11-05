@@ -1,0 +1,13 @@
+v3.45 — Regulamin i zwroty (pod Google Merchant Center)
+
+Wgraj wszystkie pliki z tej paczki do folderu strony (zastąp stare), potem commit i push w GitHub Desktop.
+
+Nowy plik: regulamin.html (Regulamin, zwroty i reklamacje).
+Zmienione: index.html, fermenty.html, herbatki.html, kosmetyki.html, nalewki.html, syropy.html, ziola.html, zakwas-bolotowa.html, sitemap.xml, CHANGELOG.txt.
+
+Co się zmieniło:
+- link "Regulamin, zwroty i reklamacje" w stopce każdej strony i pod "Informacją prawną" na stronie głównej,
+- na podstronie zakwasu link do zwrotów + dane dla Google o wysyłce (22 zł) i zwrotach (14 dni),
+- kafelek "Syropy i przetwory sezonowe": "Syrop z czarnego bzu, ocet z wrotyczu".
+
+Sprawdź po wgraniu: https://www.pracownianaturyeko.pl/regulamin.html

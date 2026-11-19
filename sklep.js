@@ -6,7 +6,23 @@
     return match ? Number(match[1]) : null;
   };
   const money=value=>`${Number(value).toFixed(2).replace('.',',')} zł`;
-  const getCart=()=>{try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]')}catch{return []}};
+  // v3.46: koszyk zapamiętany w przeglądarce jest przy każdym odczycie dopasowywany do aktualnych cen i dostępności
+  // (stary koszyk z ceną sprzed zmiany nie rozjedzie się z Workerem; usunięte lub niedostępne produkty wypadają).
+  const currentPriceFor=key=>{
+    const item=window.PRODUCTS&&window.PRODUCTS[key];
+    if(item){ if(!/dostępny/i.test(item.dostepnosc||'')||/niedostęp|potwierd|zamówienie|sezon/i.test(item.dostepnosc||'')) return null; const v=parsePrice(item.cena); return Number.isFinite(v)?v:null; }
+    for(const p of Object.values(window.PRODUCTS||{})){
+      if(Array.isArray(p.warianty)){ const v=p.warianty.find(x=>x.key===key); if(v) return Number.isFinite(Number(v.price))?Number(v.price):null; }
+    }
+    return null;
+  };
+  const getCart=()=>{
+    try{
+      const raw=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+      if(!Array.isArray(raw)||!window.PRODUCTS) return Array.isArray(raw)?raw:[];
+      return raw.map(x=>{const pr=currentPriceFor(x.key); return pr==null?null:{...x,price:pr};}).filter(Boolean);
+    }catch{return []}
+  };
   const saveCart=cart=>{localStorage.setItem(STORAGE_KEY,JSON.stringify(cart));renderCart();};
   const products=window.PRODUCTS||{};
   const shipping=Array.isArray(window.SHIPPING)?window.SHIPPING:[];

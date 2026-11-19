@@ -107,7 +107,7 @@
       actions.append(variantRow);
     }
     const buyRow=document.createElement('div');
-    buyRow.className='buy-row';
+    buyRow.className='buy-row'+(seasonal?' buy-row-ask':'');
     buyRow.append(status);
     const qty=document.createElement('div');
     qty.className='product-qty';

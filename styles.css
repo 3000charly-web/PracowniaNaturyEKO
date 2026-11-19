@@ -541,3 +541,9 @@ body.collection-modal-open{overflow:hidden}
 @media(max-width:760px){.review-grid{grid-template-columns:1fr}.reviews{padding:2rem 0}}
 
 .cart-summary.is-empty label,.cart-summary.is-empty select,.cart-summary.is-empty .ship-hint,.cart-summary.is-empty .cart-total-row,.cart-summary.is-empty .cart-order{display:none}
+
+/* v3.46: wysokość banera dopasowuje się do treści (przyciski nie są ucinane na telefonie) */
+.hero{height:auto;min-height:clamp(300px,33vh,360px)}
+.hero .content{padding-bottom:1.6rem}
+.hero .hero-actions .btn:not(.primary){background:rgba(255,255,255,.94);color:var(--green,#254f2d);border-color:transparent}
+.buy-row.buy-row-ask{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}.buy-row-ask .shop-availability{flex:1 1 100%}.buy-row-ask .product-qty{display:none}.buy-row-ask .ask-btn{flex:1 1 100%;width:100%;min-width:0;justify-content:center}

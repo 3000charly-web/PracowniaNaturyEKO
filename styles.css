@@ -514,3 +514,30 @@ body.collection-modal-open{overflow:hidden}
 .cookie-banner .btn{cursor:pointer;background:transparent;color:var(--green)}
 .cookie-banner .btn.primary{background:var(--green);color:#fff}
 @media(max-width:600px){.cookie-banner{padding:.9rem 5vw}.cookie-banner-buttons{width:100%}.cookie-banner .btn{flex:1}}
+
+/* v3.46: produkty sezonowe */
+.shop-availability.is-seasonal,.availability.is-seasonal{color:#8a6a1f}.shop-availability.is-seasonal .availability-dot,.availability.is-seasonal .availability-dot{background:#c9a13b}.ask-btn{background:#fff;color:var(--green,#254f2d);border:1.5px solid var(--green,#254f2d)}
+.ship-hint{margin:.5rem 0;padding:.55rem .75rem;border-radius:10px;background:#f6efe0;color:#5b4a1f;font-size:.9rem;line-height:1.35}.ship-hint.ok{background:#e4f0e2;color:#254f2d;font-weight:600}
+.promo-ship{display:inline-block;margin:.35rem 0 .5rem;padding:.35rem .7rem;border-radius:999px;background:#e4f0e2;color:#254f2d;font-weight:700;font-size:.9rem}.shipping-promo b{color:#fff}
+.card-price{margin:.35rem 0 .7rem}.card-price .price-value{font-size:1.25rem;font-weight:800;color:var(--green,#254f2d)}
+.card[data-product]{position:relative}.promo-ribbon{position:absolute;top:14px;left:14px;z-index:3;display:flex;flex-direction:column;gap:1px;padding:.45rem .8rem;border-radius:12px;background:var(--green,#254f2d);color:#fff;box-shadow:0 4px 12px rgba(0,0,0,.25);line-height:1.15;pointer-events:none}.promo-ribbon b{font-size:.85rem;letter-spacing:.02em}.promo-ribbon small{font-size:.72rem;opacity:.9}
+
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+.featured-product{padding:3rem 0;background:var(--cream,#faf7f0)}
+.featured-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2.2rem;align-items:center}
+.featured-photo img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.featured-text .title{margin:.2rem 0 .8rem}
+.featured-price{font-size:1.6rem;font-weight:800;color:var(--green,#254f2d);margin:.6rem 0}
+.featured-promo{margin:.3rem 0 1rem}
+@media(max-width:760px){.featured-grid{grid-template-columns:1fr;gap:1.2rem}.featured-product{padding:2rem 0}}
+
+.reviews{padding:3rem 0;background:var(--cream,#faf7f0)}
+.review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem;margin:1.4rem 0}
+.review{margin:0;padding:1.3rem 1.4rem;background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
+.review blockquote{margin:0 0 .8rem;font-style:italic;line-height:1.55}
+.review blockquote:before{content:"„"}.review blockquote:after{content:"”"}
+.review figcaption{font-weight:700;color:var(--green,#254f2d)}
+.review-summary{text-align:center;margin:0}.review-summary a{color:var(--green,#254f2d);text-decoration:underline}
+@media(max-width:760px){.review-grid{grid-template-columns:1fr}.reviews{padding:2rem 0}}
+
+.cart-summary.is-empty label,.cart-summary.is-empty select,.cart-summary.is-empty .ship-hint,.cart-summary.is-empty .cart-total-row,.cart-summary.is-empty .cart-order{display:none}

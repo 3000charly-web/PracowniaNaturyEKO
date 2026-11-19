@@ -1,0 +1,21 @@
+v3.46 — Zmiany sklepu (ceny, wysyłka, promocja, nowe produkty)
+
+WAŻNE: wdrażaj razem z Workerem płatności v2.17 (folder pracownia-natury-platnosci-worker-v2.17). Strona i Worker muszą pójść w kilka minut jeden po drugim.
+
+Wgraj wszystkie pliki z tej paczki do folderu strony (zastąp stare), potem commit i push w GitHub Desktop.
+
+Co się zmieniło:
+- Zakwas Bołotowa 49 zł; herbatki aksamitka, melisa, mięta i suszony rumianek 12 zł.
+- Cena widoczna od razu na kartach produktów.
+- Usunięta sekcja z organizerami na jajka.
+- Sześć produktów z napisem „Produkt sezonowy – zapytaj o dostępność”.
+- Nowe produkty: Oksymel (niedostępny na razie) i Zestaw herbatek – 5 sztuk (70 zł, własna podstrona zestaw-herbatek.html).
+- Wysyłka paczkomatem: mała paczka 15 zł (herbatki, zioła suszone, zestaw), standard 19 zł.
+- Promocja: 3 butelki zakwasu Bołotowa = wysyłka paczkomatem gratis.
+- Strona główna: sekcja zakwasu, przyciski w banerze, opinie klientów.
+- Favicon, pusty koszyk.
+
+Nowe pliki: zestaw-herbatek.html, zestaw-herbatek.webp, zakwas-glowna.webp, oksymel.webp, favicon.svg, favicon.ico, favicon-32.png, apple-touch-icon.png.
+Folder img/kolekcja nie jest już używany (można go zostawić albo usunąć).
+
+Sprawdź po wgraniu: https://www.pracownianaturyeko.pl/

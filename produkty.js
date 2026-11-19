@@ -19,6 +19,15 @@ window.PRODUCTS = {
     "cena": "120 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
+  "zestaw-herbatek": {
+    "nazwa": "Zestaw herbatek – 5 sztuk",
+    "opis": "Zestaw pięciu naszych herbatek ziołowych w jednej paczce: herbata na przeziębienie i kaszel, herbatka Zdrowa Wątroba, herbata z aksamitki, herbata z melisy i herbata z mięty pieprzowej.",
+    "sklad": "Herbata na przeziębienie i kaszel (80 g), Herbatka Zdrowa Wątroba (100 g), herbata z aksamitki (40–50 g), herbata z melisy (50 g), herbata z mięty pieprzowej (50 g).",
+    "zastosowanie": "Produkt spożywczy.",
+    "dodatkowe": "Pięć opakowań w jednej paczce. Osobno kosztowałyby razem 78 zł. Przechowywać w suchym i zacienionym miejscu, w szczelnym opakowaniu.",
+    "cena": "70 zł / zestaw",
+    "dostepnosc": "Dostępny"
+  },
   "herbata-przeziebienie-kaszel": {
     "nazwa": "Herbata na przeziębienie i kaszel",
     "opis": "Kompozycja siedmiu surowców zielarskich.",
@@ -35,7 +44,7 @@ window.PRODUCTS = {
     "sklad": "Serwatka kozia, glistnik.",
     "zastosowanie": "Enzymy Bołotowa, znane również jako kwas lub zakwas z glistnikiem, to tradycyjnie przygotowywany ferment na bazie serwatki i glistnika (jaskółczego ziela). Do użytku zewnętrznego.",
     "dodatkowe": "Zakwas przygotowujemy na świeżo, w małych partiach. Proces fermentacji trwa około 14 dni, dlatego w przypadku wyczerpania aktualnej partii czas realizacji zamówienia może wydłużyć się o kilka dni.",
-    "cena": "1 litr – 45 zł",
+    "cena": "1 litr – 49 zł",
     "dostepnosc": "Dostępny"
   },
   "nalewka-zielony-orzech": {
@@ -46,7 +55,7 @@ window.PRODUCTS = {
     "zastosowanie": "Nalewka z zielonych orzechów włoskich (orzechówka) to tradycyjny środek stosowany głównie na problemy z układem pokarmowym, niestrawność oraz do zwalczania pasożytów jelitowych.",
     "dodatkowe": "Nalewka z zielonego orzecha jest produktem sezonowym i jest dostępna do wyczerpania aktualnych zapasów.",
     "cena": "200 ml – 50 zł",
-    "dostepnosc": "Dostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
   "ziola-szwedzkie": {
     "nazwa": "Zioła szwedzkie",
@@ -106,7 +115,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy do urozmaicenia codziennej diety oraz jako dodatek kulinarny.",
     "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć. Dostępność najlepiej potwierdzić bezpośrednio.",
     "cena": "1 litr – 50 zł",
-    "dostepnosc": "Niedostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
 
   "ocet-bez-cytryna": {
@@ -117,7 +126,7 @@ window.PRODUCTS = {
     "zastosowanie": "Naturalny ocet o delikatnym, kwiatowo-cytrusowym aromacie. Sprawdza się w kuchni oraz, po odpowiednim rozcieńczeniu, w domowej pielęgnacji skóry i włosów.",
     "dodatkowe": "Produkt naturalnie fermentowany, niepasteryzowany i niefiltrowany. Naturalny osad jest normalną cechą produktu. Dostępność zależy od aktualnej partii.",
     "cena": "1 litr – 50 zł",
-    "dostepnosc": "Dostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
   "ocet-aksamitka": {
     "nazwa": "Ocet z kwiatów aksamitki",
@@ -127,7 +136,7 @@ window.PRODUCTS = {
     "zastosowanie": "Aromatyczny ocet o wyraźnej kwiatowej nucie. Sprawdza się w kuchni, a po odpowiednim rozcieńczeniu może być stosowany także w domowej pielęgnacji skóry i włosów.",
     "dodatkowe": "Produkt naturalnie fermentowany. Może zawierać naturalny osad. Dostępność zależy od aktualnej partii.",
     "cena": "500 ml – 35 zł",
-    "dostepnosc": "Niedostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
 
   "mazidelko-wrotycz-glistnik": {
@@ -195,8 +204,17 @@ window.PRODUCTS = {
     "sposob": "Stosować zgodnie z przeznaczeniem produktu.",
     "zastosowanie": "Surowiec zielarski do przygotowania naparów i własnych kompozycji ziołowych.",
     "dodatkowe": "Opakowanie 50 g. Przechowywać w suchym i zacienionym miejscu.",
-    "cena": "50 g – 10 zł",
+    "cena": "50 g – 12 zł",
     "dostepnosc": "Dostępny"
+  },
+  "oksymel": {
+    "nazwa": "Oksymel",
+    "opis": "Tradycyjny przetwór na occie z kwiatów aksamitki, z miodem lipowym, czosnkiem, imbirem, ziołami i przyprawami.",
+    "sklad": "Ocet z aksamitki, miód lipowy, czosnek, imbir, chili, tymianek, rozmaryn, kiwi, goździki, cynamon, cytryna, limonka.",
+    "zastosowanie": "Produkt spożywczy.",
+    "dodatkowe": "Pojemność 250 ml.",
+    "cena": "250 ml – 35 zł",
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
   "syrop-czarny-bez": {
     "nazwa": "Syrop z owoców czarnego bzu",
@@ -206,7 +224,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy.",
     "dodatkowe": "Syrop z owoców czarnego bzu jest produktem sezonowym i jest dostępny do wyczerpania aktualnych zapasów. Pojemność 300 ml.",
     "cena": "300 ml – 20 zł",
-    "dostepnosc": "Dostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
   "ocet-wrotycz": {
     "nazwa": "Ocet z wrotyczu",
@@ -216,7 +234,7 @@ window.PRODUCTS = {
     "zastosowanie": "Informacje o wrotyczu mają charakter edukacyjny i odnoszą się do tradycyjnych zastosowań zielarskich. Nie stanowią porady medycznej ani zaleceń dotyczących leczenia.",
     "dodatkowe": "Pojemność 200 ml.",
     "cena": "200 ml – 20 zł",
-    "dostepnosc": "Niedostępny"
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
   },
   "ziele-piolunu": {
     "nazwa": "Ziele piołunu – susz",
@@ -245,7 +263,7 @@ window.PRODUCTS = {
     "sposob": "Kilka całych suszonych kwiatów zalać gorącą wodą i pozostawić pod przykryciem na około 10–15 minut.",
     "zastosowanie": "Aksamitka jest tradycyjnie stosowana jako wsparcie trawienia i pracy przewodu pokarmowego. W zielarstwie ceniona jest również ze względu na naturalnie występujące związki o właściwościach antyoksydacyjnych oraz tradycyjne zastosowanie wspierające komfort po posiłkach.",
     "dodatkowe": "Opakowanie 40–50 g. Przechowywać w suchym i zacienionym miejscu, w szczelnie zamkniętym opakowaniu.",
-    "cena": "40–50 g – 10 zł",
+    "cena": "40–50 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
   "herbata-melisa": {
@@ -255,7 +273,7 @@ window.PRODUCTS = {
     "sposob": "1–2 łyżeczki suszu zalać gorącą wodą i pozostawić pod przykryciem na około 10–15 minut.",
     "zastosowanie": "Melisa jest tradycyjnie stosowana jako wsparcie wyciszenia, odprężenia i spokojnego snu. Bywa również wykorzystywana jako łagodne wsparcie trawienia i komfortu przewodu pokarmowego.",
     "dodatkowe": "Opakowanie 50 g. Przechowywać w suchym i zacienionym miejscu, w szczelnie zamkniętym opakowaniu.",
-    "cena": "50 g – 10 zł",
+    "cena": "50 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
   "herbata-mieta-pieprzowa": {
@@ -265,18 +283,7 @@ window.PRODUCTS = {
     "sposob": "1–2 łyżeczki suszu zalać gorącą wodą i pozostawić pod przykryciem na około 10–15 minut.",
     "zastosowanie": "Mięta pieprzowa jest tradycyjnie stosowana jako wsparcie trawienia, szczególnie po posiłkach, przy uczuciu ciężkości i dyskomforcie przewodu pokarmowego. Napar ma również wyraźnie odświeżający charakter.",
     "dodatkowe": "Opakowanie 50 g. Przechowywać w suchym i zacienionym miejscu, w szczelnie zamkniętym opakowaniu.",
-    "cena": "50 g – 10 zł",
+    "cena": "50 g – 12 zł",
     "dostepnosc": "Dostępny"
   },
-  "akcesorium-wazon-rozowy-spiralny": {"nazwa":"Kremowy wazon spiralny","cena":"39 zł","dostepnosc":"Dostępny","szczegoly":"Wymiary: 20 × 11 × 11 cm"},
-  "akcesorium-wazon-bialy-falisty": {"nazwa":"Biały wazon falisty","cena":"39 zł","dostepnosc":"Dostępny","szczegoly":"Wymiary: 11 × 11 × 11 cm"},
-  "akcesorium-donica-oliwkowa": {"nazwa":"Oliwkowa donica z podstawką","cena":"39 zł","dostepnosc":"Dostępny","szczegoly":"Wymiary: 13 × 13 × 10 cm"},
-  "akcesorium-polka-bezowa": {"nazwa":"Beżowa półka ścienna","cena":"39 zł","dostepnosc":"Dostępny","szczegoly":"Wymiary: wys. 27 cm × szer. 20 cm × gł. 10 cm"},
-  "akcesorium-organizer-bialy": {"nazwa":"Organizer na jajka nr 1","cena":"29 zł","dostepnosc":"Dostępny"},
-  "akcesorium-organizer-jajka": {"nazwa":"Organizer na jajka nr 2","cena":"39 zł","dostepnosc":"Dostępny"},
-  "akcesorium-organizer-jajka-pietrowy": {"nazwa":"Organizer na jajka nr 3","cena":"29 zł","dostepnosc":"Dostępny"},
-  "akcesorium-organizer-jajka-falisty": {"nazwa":"Organizer na jajka nr 4","cena":"49 zł","dostepnosc":"Dostępny"},
-  "akcesorium-organizer-jajka-5": {"nazwa":"Organizer na jajka nr 5","cena":"29 zł","dostepnosc":"Dostępny"},
-  "akcesorium-wazonik-ryflowany": {"nazwa":"Wazonik ryflowany","cena":"29 zł","dostepnosc":"Dostępny"},
-  "akcesorium-oslonka-kotek": {"nazwa":"Doniczka kotek","cena":"29 zł","dostepnosc":"Dostępny"},
 };

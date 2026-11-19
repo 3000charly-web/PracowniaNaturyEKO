@@ -69,8 +69,9 @@
     const price=variants.length ? Number(variants[0].price) : parsePrice(item.cena);
     const available=isAvailable(item);
     const status=document.createElement('div');
-    status.className=`shop-availability ${available?'is-available':'is-unavailable'}`;
-    status.innerHTML=`<span class="availability-dot"></span>${available?'Dostępny':'Niedostępny'}`;
+    const seasonal=!available&&/sezon/i.test(item.dostepnosc||'');
+    status.className=`shop-availability ${available?'is-available':(seasonal?'is-unavailable is-seasonal':'is-unavailable')}`;
+    status.innerHTML=`<span class="availability-dot"></span>${available?'Dostępny':(seasonal?item.dostepnosc:'Niedostępny')}`;
     let variantSelect=null;
     if(variants.length){
       const variantRow=document.createElement('div');
@@ -106,7 +107,12 @@
     if(price===null){
       button.textContent='Cena do uzupełnienia'; button.disabled=true; button.classList.add('disabled'); qty.classList.add('disabled');
     }else if(!available){
-      button.textContent='Niedostępny'; button.disabled=true; button.classList.add('disabled'); qty.classList.add('disabled');
+      if(seasonal){
+        button.textContent='✉ Zapytaj o dostępność'; button.classList.add('ask-btn'); qty.classList.add('disabled');
+        button.addEventListener('click',()=>{location.href='index.html#kontakt';});
+      }else{
+        button.textContent='Niedostępny'; button.disabled=true; button.classList.add('disabled'); qty.classList.add('disabled');
+      }
     }else{
       button.textContent='🛒 Dodaj do koszyka';
       if(!card.classList.contains('collection-card')){
@@ -228,6 +234,7 @@
         <div class="cart-summary">
           <label for="cart-shipping">Sposób dostawy</label>
           <select id="cart-shipping" data-cart-shipping></select>
+          <p class="ship-hint" data-ship-hint hidden></p>
           <div class="cart-total-row"><span>Produkty</span><strong data-cart-subtotal>0,00 zł</strong></div>
           <div class="cart-total-row"><span>Dostawa</span><strong data-cart-shipping-price>0,00 zł</strong></div>
           <div class="cart-total-row cart-grand"><span>Razem</span><strong data-cart-total>0,00 zł</strong></div>
@@ -280,12 +287,63 @@
   shipping.forEach((item,i)=>{
     const option=document.createElement('option'); option.value=i; option.textContent=`${item.nazwa} — ${item.cena}`; shippingSelect.append(option);
   });
+  const rules=window.SHIPPING_RULES||{};
+  const smallKeys=Array.isArray(rules.smallKeys)?rules.smallKeys:[];
+  const freePromo=rules.freePromo&&rules.freePromo.enabled?rules.freePromo:null;
+  const smallIndex=shipping.findIndex(x=>x.maly);
+  const standardIndex=shipping.findIndex(x=>x.gratisPromo&&!x.maly);
+  let prevCartSmall=false;
+  const cartIsSmall=cart=>cart.length>0&&cart.every(x=>smallKeys.includes(x.key));
+  const promoQty=cart=>freePromo?cart.filter(x=>x.key===freePromo.key).reduce((n,x)=>n+x.qty,0):0;
+  const promoActive=cart=>!!freePromo&&promoQty(cart)>=freePromo.minQty;
+  // Informacje o promocji (gdy włączona w wysylka.js): plakietka przy zakwasie i zdanie w sekcji wysyłki.
+  if(freePromo){
+    const promoText=`Przy zakupie ${freePromo.minQty} butelek zakwasu Bołotowa wysyłka paczkomatem gratis (także gdy dołożysz inne produkty).`;
+    document.querySelectorAll(`[data-product="${freePromo.key}"]`).forEach(card=>{
+      if(card.querySelector('.promo-ribbon')) return;
+      const r=document.createElement('span'); r.className='promo-ribbon';
+      r.innerHTML=`<b>Wysyłka gratis</b><small>przy ${freePromo.minQty} butelkach</small>`;
+      card.append(r);
+    });
+    const info=document.querySelector('.shipping-info');
+    if(info&&!info.querySelector('.shipping-promo')){
+      const p=document.createElement('p'); p.className='shipping-note shipping-promo'; p.innerHTML='<b>Promocja:</b> '+promoText;
+      const notes=info.querySelectorAll('.shipping-note'); (notes.length?notes[notes.length-1]:info).after(p);
+    }
+  }
+  document.querySelectorAll('[data-featured-price]').forEach(el=>{const it=products[el.dataset.featuredPrice]; if(it) el.textContent=it.cena||'';});
+  if(freePromo) document.querySelectorAll('[data-featured-promo]').forEach(el=>{el.innerHTML=`<span class="promo-ship">🚚 ${freePromo.minQty} butelki zakwasu = wysyłka paczkomatem gratis</span>`;});
+  function plBottles(n){return n===1?'1 butelkę':(n>=2&&n<=4?`${n} butelki`:`${n} butelek`);}
+  // Dopasowuje listę dostaw do koszyka: mała paczka tylko dla małych produktów, ceny/gratis, podpowiedź.
+  function syncShipping(cart){
+    const small=cartIsSmall(cart), free=promoActive(cart);
+    [...shippingSelect.options].forEach((opt,i)=>{
+      const it=shipping[i];
+      const hide=!!it.maly&&!small;
+      opt.hidden=hide; opt.disabled=hide;
+      opt.textContent=`${it.nazwa} — ${(it.gratisPromo&&free)?'GRATIS':it.cena}`;
+    });
+    if(smallIndex>=0){
+      if(!small&&Number(shippingSelect.value)===smallIndex&&standardIndex>=0) shippingSelect.value=String(standardIndex);
+      else if(small&&!prevCartSmall&&Number(shippingSelect.value)===standardIndex) shippingSelect.value=String(smallIndex);
+    }
+    prevCartSmall=small;
+    const hint=overlay.querySelector('[data-ship-hint]');
+    if(hint){
+      const q=promoQty(cart);
+      if(freePromo&&q>0&&q<freePromo.minQty){
+        hint.textContent=`Dodaj jeszcze ${plBottles(freePromo.minQty-q)} zakwasu Bołotowa, a wysyłka paczkomatem będzie gratis.`; hint.hidden=false; hint.classList.remove('ok');
+      }else if(freePromo&&q>=freePromo.minQty){
+        hint.textContent='Masz wysyłkę gratis! Możesz dołożyć inne produkty bez dodatkowych kosztów wysyłki.'; hint.hidden=false; hint.classList.add('ok');
+      }else{hint.hidden=true;}
+    }
+  }
   shippingSelect.addEventListener('change',()=>{renderCart(); renderDeliveryFields();});
 
   function openCart(){overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');const sc=overlay.querySelector('[data-summary-content]'),os=overlay.querySelector('[data-order-success]'),st=overlay.querySelector('[data-order-send-status]'),sb=overlay.querySelector('[data-send-order]');if(sc)sc.hidden=false;if(os)os.hidden=true;if(st)st.textContent='';if(sb){sb.disabled=false;sb.textContent='Wyślij zamówienie';}showStep('cart');renderCart();}
   function closeCart(){overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');}
   function shippingItem(){return shipping[Number(shippingSelect.value)||0]||null;}
-  function shippingCost(){const item=shippingItem(); if(!item||/bezpłat/i.test(item.cena))return 0; return parsePrice(item.cena)||0;}
+  function shippingCost(){const item=shippingItem(); if(!item||/bezpłat/i.test(item.cena))return 0; if(item.gratisPromo&&promoActive(getCart()))return 0; return parsePrice(item.cena)||0;}
   function paymentLabel(){return formDataObject().payment||'Nie wybrano';}
   function showStep(step){
     overlay.querySelectorAll('[data-checkout-panel]').forEach(p=>p.classList.toggle('active',p.dataset.checkoutPanel===step));
@@ -304,10 +362,12 @@
       list.querySelectorAll('[data-plus]').forEach(btn=>btn.addEventListener('click',()=>changeQty(Number(btn.dataset.plus),1)));
       list.querySelectorAll('[data-remove]').forEach(btn=>btn.addEventListener('click',()=>removeItem(Number(btn.dataset.remove))));
     }
+    syncShipping(cart);
     const subtotal=cart.reduce((sum,x)=>sum+x.price*x.qty,0), ship=shippingCost();
     overlay.querySelector('[data-cart-subtotal]').textContent=money(subtotal);
     overlay.querySelector('[data-cart-shipping-price]').textContent=money(ship);
     overlay.querySelector('[data-cart-total]').textContent=money(subtotal+ship);
+    overlay.querySelector('.cart-summary').classList.toggle('is-empty',!cart.length);
     overlay.querySelector('[data-go-details]').disabled=!cart.length;
     overlay.querySelector('[data-clear-cart]').disabled=!cart.length;
   }

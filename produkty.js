@@ -225,6 +225,24 @@ window.PRODUCTS = {
     "cena": "250 ml – 35 zł",
     "dostepnosc": "Dostępny"
   },
+  "syrop-aksamitka": {
+    "nazwa": "Syrop z aksamitki",
+    "opis": "Syrop z kwiatów aksamitki przygotowywany ręcznie, w niewielkich partiach.",
+    "sklad": "Woda, aksamitka, cukier.",
+    "zastosowanie": "Produkt spożywczy.",
+    "dodatkowe": "Pojemność 300 ml.",
+    "cena": "300 ml – 20 zł",
+    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
+  },
+  "syrop-pedow-sosny": {
+    "nazwa": "Syrop z pędów sosny",
+    "opis": "Syrop z młodych pędów sosny przygotowywany ręcznie, w niewielkich partiach.",
+    "sklad": "Pędy sosny, cukier.",
+    "zastosowanie": "Produkt spożywczy.",
+    "dodatkowe": "Pojemność 300 ml.",
+    "cena": "300 ml – 25 zł",
+    "dostepnosc": "Dostępny"
+  },
   "syrop-czarny-bez": {
     "nazwa": "Syrop z owoców czarnego bzu",
     "opis": "Sezonowy syrop przygotowywany z owoców czarnego bzu w niewielkich partiach.",

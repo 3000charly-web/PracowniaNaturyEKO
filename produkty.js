@@ -115,7 +115,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy do urozmaicenia codziennej diety oraz jako dodatek kulinarny.",
     "dodatkowe": "Naturalny osad oraz tzw. matka octowa są zjawiskiem naturalnym. Przed użyciem delikatnie wstrząsnąć. Dostępność najlepiej potwierdzić bezpośrednio.",
     "cena": "1 litr – 50 zł",
-    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
+    "dostepnosc": "Dostępny"
   },
 
   "ocet-bez-cytryna": {
@@ -136,7 +136,7 @@ window.PRODUCTS = {
     "zastosowanie": "Aromatyczny ocet o wyraźnej kwiatowej nucie. Sprawdza się w kuchni, a po odpowiednim rozcieńczeniu może być stosowany także w domowej pielęgnacji skóry i włosów.",
     "dodatkowe": "Produkt naturalnie fermentowany. Może zawierać naturalny osad. Dostępność zależy od aktualnej partii.",
     "cena": "500 ml – 35 zł",
-    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
+    "dostepnosc": "Dostępny"
   },
 
   "mazidelko-wrotycz-glistnik": {
@@ -187,6 +187,15 @@ window.PRODUCTS = {
     "cena": "80 g – 15 zł",
     "dostepnosc": "Dostępny"
   },
+  "odrobaczanie-mieszanka-ziolowa": {
+    "nazwa": "Odrobaczanie – mieszanka ziołowa",
+    "opis": "Mieszanka ziołowa przygotowana w naszej pracowni, w niewielkich partiach.",
+    "sklad": "Ziele bylicy piołun, nasiona dyni zwyczajnej, korzeń imbiru, goździk, ziele tymianku pospolitego, nasiona kopru włoskiego, ziele lebiodki pospolitej, czosnek pospolity, ziele prawoślazu lekarskiego; glicerol 40%.",
+    "zastosowanie": "Produkt spożywczy.",
+    "dodatkowe": "Pojemność 100 ml. Przechowywać w chłodnym i zacienionym miejscu. Szczegółów udziela właścicielka po kontakcie.",
+    "cena": "100 ml – 80 zł",
+    "dostepnosc": "Dostępny"
+  },
   "ziele-mniszka": {
     "nazwa": "Ziele mniszka lekarskiego – susz",
     "opis": "Suszone ziele mniszka lekarskiego przygotowane w niewielkich partiach.",
@@ -214,7 +223,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy.",
     "dodatkowe": "Pojemność 250 ml.",
     "cena": "250 ml – 35 zł",
-    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
+    "dostepnosc": "Dostępny"
   },
   "syrop-czarny-bez": {
     "nazwa": "Syrop z owoców czarnego bzu",

@@ -1,0 +1,8 @@
+v3.49 — syrop z czarnego bzu dostępny, nowe zdjęcia zakwasu i zestawu herbatek, link do Facebooka
+
+WAŻNE: wdrażaj razem z Workerem płatności v2.20 (folder pracownia-natury-platnosci-worker-v2.20).
+
+Zmienione pliki: produkty.js, index.html, kontakt.js, fermenty.html, zakwas-bolotowa.html, zestaw-herbatek.webp (podmienione zdjęcie), CHANGELOG.txt. Nowy plik: zakwas-karta.webp.
+Cała zawartość folderu v3_49-zdjecia-syrop-bzu to pełna kopia strony: skopiuj wszystko do repozytorium, GitHub Desktop pokaże tylko zmienione pliki.
+
+Po wgraniu: Ctrl+F5 (zdjęcia mogą się odświeżyć do ok. 10 minut), sprawdź karty zakwasu i zestawu herbatek, dodaj do koszyka syrop z czarnego bzu (20 zł + wysyłka 19 zł = 39 zł).

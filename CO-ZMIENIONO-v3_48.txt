@@ -1,8 +1,0 @@
-v3.48 — syrop z pędów sosny i syrop z aksamitki
-
-WAŻNE: wdrażaj razem z Workerem płatności v2.19 (folder pracownia-natury-platnosci-worker-v2.19).
-
-Zmienione pliki: produkty.js, syropy.html, CHANGELOG.txt. Nowe pliki: syrop-pedow-sosny.webp, syrop-aksamitka.webp.
-Do wgrania na GitHuba wystarczy folder v3_48-tylko-zmiany (te pięć plików). Folder v3_48-syropy to pełna kopia strony (archiwum).
-
-Po wgraniu: Ctrl+F5, dodaj do koszyka syrop z pędów sosny (25 zł + wysyłka 19 zł = 44 zł). Syrop z aksamitki ma mieć przycisk „Zapytaj o dostępność".

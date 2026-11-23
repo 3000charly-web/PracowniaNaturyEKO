@@ -251,7 +251,7 @@ window.PRODUCTS = {
     "zastosowanie": "Produkt spożywczy.",
     "dodatkowe": "Syrop z owoców czarnego bzu jest produktem sezonowym i jest dostępny do wyczerpania aktualnych zapasów. Pojemność 300 ml.",
     "cena": "300 ml – 20 zł",
-    "dostepnosc": "Produkt sezonowy – zapytaj o dostępność"
+    "dostepnosc": "Dostępny"
   },
   "ocet-wrotycz": {
     "nazwa": "Ocet z wrotyczu",
